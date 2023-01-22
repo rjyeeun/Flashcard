@@ -2,7 +2,9 @@ import React from 'react';
 
 function App() {
   return (
-    <h1> Hello Group 6! </h1>
+    <>
+      <h1>Group 6</h1>
+    </>
   );
 }
 
