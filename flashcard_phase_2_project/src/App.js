@@ -1,30 +1,26 @@
 import React, {useEffect, useState} from 'react';
-// import Header from './Header';
-// import Search from './Search';
-// import Study from './Study';
-// import FlashCardForm from './FlashCardForm';
-import FlashCardGroups from './components/FlashCardGroups';
+import Decks from './components/Decks';
 
 
 function App() {
 
-  const url = 'http://localhost:8001/flashcardGroups'
-  const [flashcards, setFlashCards] = useState([])
+  const url = 'http://localhost:8001/Decks'
+  const [flashCardDecks, setFlashCardDecks] = useState([])
 
-  //Initial Fetch
+  //Initial Fetch All Flash Card Decks
   useEffect(() => {
     fetch(url)
     .then(response => response.json())
-    .then(data => setFlashCards(data))
+    .then(data => setFlashCardDecks(data))
   },[])
-  
-  console.log(flashcards)
 
   return (
-      // <h1>Group 6</h1>
-      <FlashCardGroups 
-        flashcards={flashcards}
+    <>
+      <h1>Sticky Study</h1>
+      <Decks 
+        flashCardDecks={flashCardDecks}
       />
+    </>
   );
 }
 

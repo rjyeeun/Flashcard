@@ -1,16 +1,16 @@
 {
-    "flashcardGroups": [
+    "decks": [
         {   
             "id": "1",
-            "flashCardSet": "React",
+            "title": "React",
             "flashcards": [
                 {
-                    "id": "2",
+                    "id": "1",
                     "question": "What is JSX?",
                     "answer": "JavaScript XML => allows us to combine JS and HTML."
                 },
                 {
-                    "id": "3",
+                    "id": "2",
                     "question": "What is Declarative Programming?",
                     "answer": "Declarative programming is a style of programming where the focus is on describing the desired outcome, rather than specifying the steps to achieve it."
                 }
@@ -18,15 +18,15 @@
         },
         {
             "id": "2",
-            "flashCardSet": "JavaScript",
+            "title": "JavaScript",
             "flashcards": [
                 {
-                    "id": "5",
+                    "id": "1",
                     "question": "What is the difference between == and ===?",
                     "answer": "== compares values for equality without considering data types, while === compares both value and data type for equality."
                 },
                 {
-                    "id": "6",
+                    "id": "2",
                     "question": "What does the '!' mean?",
                     "answer": "'!' is know as the 'bang' or 'not' operator. It is used to negate or invert the value of a boolean expression."
                 }

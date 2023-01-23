@@ -1,20 +1,18 @@
-// import FlashCard from './FlashCard';
+import FlashCard from './FlashCard';
 
-function FlashCardSet({flashcardSet}) {
+function FlashCardSet({title, flashcards}) {
 
-    
-    // const flashcard = flashcardSet.map(flashcard => 
-    //     return
-
-    //     <FlashCard 
-    //         key={flashcard.id}
-    //         flashcard={flashcard}
-    //     />
-    // )
+    const flashcard = flashcards.map(flashcard => (
+        <FlashCard 
+            key={flashcard.id}
+            flashcard={flashcard}
+        />
+    ))
 
     return (
         <div>
-            <h2>{flashcardSet}</h2>
+            <h1>{title}</h1>
+            {flashcard}
         </div>
     );
   }
