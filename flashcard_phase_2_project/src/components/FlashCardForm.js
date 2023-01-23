@@ -2,8 +2,7 @@
 
 function FlashCardForm() {
     return (
-        <>
-        </>
+        <h1>Create</h1>
     )
 }
 
