@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import {Switch, Route} from 'react-router-dom'
+
 import Decks from './components/Decks';
 import Header from './components/Header';
 import FlashCardForm from './components/FlashCardForm';
-import {Switch, Route} from 'react-router-dom'
 import Study from './components/Study';
-import Favorites from './components/Favorites'
-import Home from './components/Home'
+import Favorites from './components/Favorites';
+import Home from './components/Home';
 
 function App() {
 
@@ -27,21 +28,25 @@ function App() {
         <Route exact path='/'>
           <Home />
         </Route>
-        
+    
         <Route path='/create_new_cards'>
           <FlashCardForm />
         </Route>
+
         <Route path='/decks/:id/study'>
           <Study />
         </Route>
+        
+        <Route path='/decks/1'>
+          <Favorites />
+        </Route>
+
         <Route path='/decks'>
           <Decks 
             flashCardDecks={flashCardDecks}
           />
         </Route>
-        <Route path='/decks/1'>
-          <Favorites />
-        </Route>
+
       </Switch>
     </div>
   );
