@@ -11,8 +11,13 @@ function FlashCard({flashcard}) {
     const {id, question, answer} = flashcard
 
     return (
-        <div className='card' style={{background: isFront ? '#26d83e':'#ff69b4'}} onClick={toggleStudy}>
-            <p >{isFront?question:answer}</p>
+        <div className='container'  onClick={toggleStudy}>
+            <div className='card'>
+                {isFront? (
+                <h2 className="front">{question}</h2>
+                ) : (
+                <h2 className="back">{answer}</h2> )}
+            </div>
         </div>
     );
   }
