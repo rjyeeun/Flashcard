@@ -1,7 +1,7 @@
 import FlashCard from './FlashCard'
 import Search from './Search'
 
-function FlashCardList({ cardList, search, setSearch}) {
+function FlashCardList({ cardList, searchTerm, setSearch}) {
     // Create an Array of Decks
     const flashCard = cardList.map(card =>(
         <FlashCard 
@@ -12,7 +12,10 @@ function FlashCardList({ cardList, search, setSearch}) {
 
     return (
         <div>
-            <Search  search = {search} setSearch={setSearch} />
+            <Search  
+                searchTerm = {searchTerm} 
+                setSearch={setSearch} 
+            />
             {flashCard}
         </div>
     );

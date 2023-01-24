@@ -1,10 +1,23 @@
 import React from 'react'
 
- function Search({search, setSearch}) {
+ function Search({searchTerm, setSearch}) {
+
+  const handleChange = (e) => {
+ 
+    setSearch(e.target.value);
+  }
+
   return (
     <div className="search_container">
         <span>Search </span>
-        <input className="inputBox" type="text" id="search" placeholder={search} onChange={(e) => setSearch(e.target.value)} />
+        <input
+          value={searchTerm} 
+          className="inputBox" 
+          type="text" 
+          id="search" 
+          placeholder='Looking for something?' 
+          onChange={handleChange} 
+        />
         
     </div>
   )

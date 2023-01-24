@@ -12,7 +12,7 @@ function App() {
 
   const url = 'http://localhost:8001/decks'
   const [cardList, setCardList] = useState([])
-  const [search, setSearch] = useState("")
+  const [searchTerm, setSearch] = useState("")
 
   //Initial Fetch All Flash Card Decks
   useEffect(() => {
@@ -28,7 +28,9 @@ function App() {
   }
 
   //filtering search function
- 
+  const filteredCards = cardList.filter(card => (
+    card.question.toLowerCase().includes(searchTerm.toLowerCase()) || card.title.toLowerCase().includes(searchTerm.toLowerCase())
+  ))
 
   return (
     <div>
@@ -47,8 +49,8 @@ function App() {
 
         <Route path='/cards/study'>
           <StudyCardList 
-              cardList={cardList}
-              search={search}
+              cardList={filteredCards}
+              searchTerm={searchTerm}
               setSearch={setSearch}
           />
         </Route>
@@ -59,8 +61,8 @@ function App() {
 
         <Route path='/cards'>
           <FlashCardList 
-            cardList={cardList}
-            search={search}
+            cardList={filteredCards}
+            searchTerm={searchTerm}
             setSearch={setSearch}
           />
         </Route>
