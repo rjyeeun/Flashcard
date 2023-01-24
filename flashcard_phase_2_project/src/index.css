@@ -137,6 +137,7 @@
     background: linear-gradient(-30deg, transparent 1.5em, #ffd938 0)
 }
 .container {
+    cursor: pointer;
     padding: 0.5em;
     display: grid;
 
