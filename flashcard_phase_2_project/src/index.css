@@ -3,10 +3,7 @@
     font-family: 'Sticky Notes';
     src: url(./fonts/Sticky\ Notes.ttf);
 }
-@font-face {
-    font-family: 'StickNoteDemoRegular';
-    src: url(./fonts/StickNoteDemoRegular.ttf);
-}
+
 @font-face {
     font-family: 'Chivo-Bold';
     src: url(./fonts/Chivo-Bold.ttf);
@@ -14,7 +11,7 @@
 }
 
 .title {
-    font-family: 'Sticky Notes', sans-serif;
+    font-family: 'Chivo-Bold', sans-serif;
     display: inline-block;
     position: relative;
     font-size: 50px;
@@ -35,30 +32,35 @@
     border-bottom-right-radius: 5px;
     width: 10em;
     height: 1.5em;
-    background: linear-gradient(-30deg, transparent 1.2em, #E7F150 0);
+    background: linear-gradient(-30deg, transparent 1.5em, #E7F150 0);
 }
 
 .createNew {
-    font-family: 'Chivo-regular', sans-serif;
-    display: inline-block;
+    font-family: 'Sticky Notes', sans-serif;
     font-size: xx-large;
     text-align: center;
     text-decoration:none;
-    color:#000;
-
-}
-
-.createNew {
+    color:#000; 
     background: #FBAE3C;
-    display:block;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     height:1em;
     width:7em;
     padding:1em;
     box-shadow: 5px 5px 7px #FBAE3C;
     transform: rotate(-6deg);
     transition: transform .15s linear;
-    margin-left: 3em;
-    margin-top: 1.8em
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+.createNew:hover {
+    border-bottom-right-radius: 5px;
+    width: 7em;
+    height: 1em;
+    background: linear-gradient(-30deg, transparent 1.5em, #FBAE3C 0)
 }
 
 .myFlashcard {
@@ -75,10 +77,17 @@
     box-shadow: 5px 5px 7px #FD4DB0;
     transform: rotate(6deg);
     transition: transform .15s linear;
-    margin-left: 13em;
-    margin-top: -3em
+    margin: auto;
+    margin-left: 630px;
+    margin-top: -95px
 }
 
+.myFlashcard:hover {
+    border-bottom-right-radius: 5px;
+    width: 7em;
+    height: 1em;
+    background: linear-gradient(-30deg, transparent 1.5em, #FD4DB0 0)
+}
 .study {
     font-family: 'Sticky Notes', sans-serif;
     font-size: xx-large;
@@ -93,10 +102,16 @@
     box-shadow: 5px 5px 7px #1DACE6;
     transform: rotate(-6deg);
     transition: transform .15s linear;
-    margin-left: 23em;
-    margin-top: -3em
+    margin: auto;
+    margin-left: 1000px;
+    margin-top: -95px
 }
-
+.study:hover {
+    border-bottom-right-radius: 5px;
+    width: 7em;
+    height: 1em;
+    background: linear-gradient(-30deg, transparent 1.5em, #1dace6 0)
+}
 .favorites {
     font-family: 'Sticky Notes', sans-serif;
     font-size: xx-large;
@@ -111,6 +126,39 @@
     box-shadow: 5px 5px 7px #FFD938;
     transform: rotate(6deg);
     transition: transform .15s linear;
-    margin-left: 33em;
-    margin-top: -3em
+    position: relative;
+    margin-left: 1380px;
+    margin-top: -95px
 }
+.favorites:hover {
+    border-bottom-right-radius: 5px;
+    width: 7em;
+    height: 1em;
+    background: linear-gradient(-30deg, transparent 1.5em, #ffd938 0)
+}
+.container {
+    padding: 0.5em;
+    display: grid;
+
+}
+.card {
+    padding: 2em;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+    background-color: #E7F150;
+    position: relative;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3rd
+}
+
+
+.front {
+    
+    color: black;
+  }
+  
+  .back {
+  
+    background-color: green; 
+    color: white;
+  }
