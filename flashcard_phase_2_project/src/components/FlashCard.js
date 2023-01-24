@@ -15,10 +15,12 @@ function FlashCard({card}) {
             <div className='card'>
                 {isFront? (
                 <h2 className="front">{title}
-                 <div> {question}</div>
-                  </h2>
+                    <div className="question"> {question}</div>
+                </h2>
                 ) : (
-                <h2 className="back">{answer}<img src={image}/></h2> 
+                <h2 className="back">{answer}
+                    <div><img className="image" src={image}/></div>
+                </h2> 
                 )}
             </div>
         </div>
