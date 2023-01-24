@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Switch, Route} from 'react-router-dom'
 
 import Home from './components/Home'
-import Decks from './components/Decks';
+import FlashCardList from './components/FlashCardList';
 import Header from './components/Header';
 import FlashCardForm from './components/FlashCardForm';
 import Study from './components/Study';
@@ -11,14 +11,24 @@ import Favorites from './components/Favorites';
 function App() {
 
   const url = 'http://localhost:8001/decks'
-  const [flashCardDecks, setFlashCardDecks] = useState([])
+  const [cardList, setCardList] = useState([])
+  const [search, setSearch] = useState("")
 
   //Initial Fetch All Flash Card Decks
   useEffect(() => {
     fetch(url)
     .then(response => response.json())
-    .then(data => setFlashCardDecks(data))
+    .then(data => setCardList(data))
   },[])
+
+  //add cards after submitting form
+  const addCards = (newCard) => {
+    const updatedCards = [...cardList, newCard];
+    setCardList(updatedCards)
+  }
+
+  //filtering search function
+ 
 
   return (
     <div>
@@ -26,23 +36,25 @@ function App() {
       <Header />
       <Switch>
         <Route exact path='/'>
-          <Home />
+          <Home/>
         </Route>
         <Route path='/create_new_cards'>
-          <FlashCardForm />
+          <FlashCardForm addCards = {addCards}/>
         </Route>
 
-        <Route path='/decks/:id/study'>
+        <Route path='/cards/:id/study'>
           <Study />
         </Route>
         
-        <Route path='/decks/1'>
+        <Route path='/cards/1'>
           <Favorites />
         </Route>
 
-        <Route path='/decks'>
-          <Decks 
-            flashCardDecks={flashCardDecks}
+        <Route path='/cards'>
+          <FlashCardList 
+            cardList={cardList}
+            search={search}
+            setSearch={setSearch}
           />
         </Route>
 
