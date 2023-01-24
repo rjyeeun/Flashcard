@@ -11,12 +11,12 @@ function FlashCard({flashcard}) {
     const {id, question, answer} = flashcard
 
     return (
-        <div className='container'>
+        <div className='container'  onClick={toggleStudy}>
             <div className='card'>
                 {isFront? (
-                <h2 className="front" onClick={toggleStudy}>{question}</h2>
+                <h2 className="front">{question}</h2>
                 ) : (
-                <h2 className="back" onClick={toggleStudy}>{answer}</h2> )}
+                <h2 className="back">{answer}</h2> )}
             </div>
         </div>
     );
