@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {Switch, Route} from 'react-router-dom'
 
+import Home from './components/Home'
 import Decks from './components/Decks';
 import Header from './components/Header';
 import FlashCardForm from './components/FlashCardForm';
 import Study from './components/Study';
 import Favorites from './components/Favorites';
-import Home from './components/Home';
 
 function App() {
 
@@ -22,13 +22,12 @@ function App() {
 
   return (
     <div>
-      <Header />
       
+      <Header />
       <Switch>
         <Route exact path='/'>
           <Home />
         </Route>
-    
         <Route path='/create_new_cards'>
           <FlashCardForm />
         </Route>
