@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function FlashCard({flashcard}) {
+function FlashCard({card}) {
     
     const [isFront, setIsFront]=useState(true)
 
@@ -8,15 +8,18 @@ function FlashCard({flashcard}) {
         setIsFront(isFront => !isFront)
     }
 
-    const {id, question, answer} = flashcard
+    const {id, title, question, answer, image} = card
 
     return (
         <div className='container'  onClick={toggleStudy}>
             <div className='card'>
                 {isFront? (
-                <h2 className="front">{question}</h2>
+                <h2 className="front">{title}
+                 <div> {question}</div>
+                  </h2>
                 ) : (
-                <h2 className="back">{answer}</h2> )}
+                <h2 className="back">{answer}<img src={image}/></h2> 
+                )}
             </div>
         </div>
     );

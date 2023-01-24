@@ -14,18 +14,19 @@
     font-family: 'Chivo-Bold', sans-serif;
     display: inline-block;
     position: relative;
-    font-size: 50px;
+    font-size: 70px;
     font-weight: bold;
     text-align: center;
     text-decoration:none;
     color:#000;
     background: #E7F150;
     display:block;
-    height:1.5em;
-    width:10em;
-    padding:1em;
+    height:1.4em;
+    width:8em;
+    padding:13px;
     box-shadow: 5px 5px 7px #E7F150;
     margin: auto;
+    margin-bottom: 30px;
     border-bottom-right-radius: 60px 5px;
 }
 .title:hover{
@@ -35,25 +36,32 @@
     background: linear-gradient(-30deg, transparent 1.5em, #E7F150 0);
 }
 
+.flex_Container {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    width: auto;
+    
+}
+
 .createNew {
     font-family: 'Sticky Notes', sans-serif;
+    display: flex;
     font-size: xx-large;
     text-align: center;
     text-decoration:none;
     color:#000; 
     background: #FBAE3C;
-    display:flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     height:1em;
     width:7em;
     padding:1em;
     box-shadow: 5px 5px 7px #FBAE3C;
-    transform: rotate(-6deg);
-    transition: transform .15s linear;
-    margin-left: 250px;
-    margin-top: 50px;
+    /* transform: rotate(-6deg); */
+    /* transition: transform .15s linear; */
+    /* margin-left: 250px;
+    margin-top: 50px; */
 }
 
 .createNew:hover {
@@ -71,15 +79,16 @@
     color:#000;
     background: #FD4DB0;
     display:block;
+    justify-content: center;
     height:1em;
     width:7em;
     padding:1em;
     box-shadow: 5px 5px 7px #FD4DB0;
-    transform: rotate(6deg);
-    transition: transform .15s linear;
-    margin: auto;
-    margin-left: 630px;
-    margin-top: -95px
+    /* transform: rotate(6deg); */
+    /* transition: transform .15s linear; */
+    /* margin: auto; */
+    /* margin-left: 630px;
+    margin-top: -95px */
 }
 
 .myFlashcard:hover {
@@ -100,11 +109,11 @@
     width:7em;
     padding:1em;
     box-shadow: 5px 5px 7px #1DACE6;
-    transform: rotate(-6deg);
-    transition: transform .15s linear;
-    margin: auto;
-    margin-left: 1000px;
-    margin-top: -95px
+    /* transform: rotate(-6deg); */
+    /* transition: transform .15s linear; */
+    /* margin: auto; */
+    /* margin-left: 1000px;
+    margin-top: -95px */
 }
 .study:hover {
     border-bottom-right-radius: 5px;
@@ -124,11 +133,11 @@
     width:7em;
     padding:1em;
     box-shadow: 5px 5px 7px #FFD938;
-    transform: rotate(6deg);
-    transition: transform .15s linear;
-    position: relative;
-    margin-left: 1380px;
-    margin-top: -95px
+    /* transform: rotate(6deg); */
+    /* transition: transform .15s linear; */
+    /* position: relative; */
+    /* margin-left: 1380px;
+    margin-top: -95px */
 }
 .favorites:hover {
     border-bottom-right-radius: 5px;
@@ -137,6 +146,7 @@
     background: linear-gradient(-30deg, transparent 1.5em, #ffd938 0)
 }
 .container {
+    cursor: pointer;
     padding: 0.5em;
     display: grid;
 
