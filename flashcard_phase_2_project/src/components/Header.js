@@ -8,11 +8,11 @@ function Header () {
 
             <div>
                 <Link to = "/" className="title">Sticky Study</Link>
-                <div className="flex_Container">
-                    <Link to = "/create_new_cards" className="createNew">Create Flashcards</Link>
+                <div className="flex_Container">  
                     <Link to = "/cards" className="myFlashcard" >My Flashcards</Link>
-                    <Link to = "/cards/:id/study" className="study" >Study</Link>
+                    <Link to = "/cards/study" className="study" >Study</Link>
                     <Link to = "/cards/1" className="favorites">Favorites</Link>
+                    <Link to = "/create_new_cards" className="createNew">Create Flashcards</Link>
                 </div>
             </div>
     )

@@ -5,7 +5,7 @@ import Home from './components/Home'
 import FlashCardList from './components/FlashCardList';
 import Header from './components/Header';
 import FlashCardForm from './components/FlashCardForm';
-import Study from './components/Study';
+import StudyCardList from './components/StudyCardList.js';
 import Favorites from './components/Favorites';
 
 function App() {
@@ -34,16 +34,23 @@ function App() {
     <div>
       
       <Header />
+
       <Switch>
+
         <Route exact path='/'>
           <Home/>
         </Route>
+
         <Route path='/create_new_cards'>
           <FlashCardForm addCards = {addCards}/>
         </Route>
 
-        <Route path='/cards/:id/study'>
-          <Study />
+        <Route path='/cards/study'>
+          <StudyCardList 
+              cardList={cardList}
+              search={search}
+              setSearch={setSearch}
+          />
         </Route>
         
         <Route path='/cards/1'>

@@ -1,5 +1,3 @@
-import {SiAddthis} from 'react-icons/si'
-import {MdDeleteForever} from 'react-icons/md'
 import {useState} from 'react'
 
 function FlashCardForm({addCards}) {
