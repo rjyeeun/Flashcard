@@ -1,7 +1,7 @@
 import Study from './Study'
 import Search from './Search'
 
-function StudyCardList({ cardList, search, setSearch}) {
+function StudyCardList({ cardList, searchTerm, setSearch}) {
     // Create an Array of Decks
     const studyCard = cardList.map(card =>(
         <Study 
@@ -12,7 +12,7 @@ function StudyCardList({ cardList, search, setSearch}) {
 
     return (
         <div>
-            <Search  search = {search} setSearch={setSearch} />
+            <Search  searchTerm = {searchTerm} setSearch={setSearch} />
             {studyCard}
         </div>
     );

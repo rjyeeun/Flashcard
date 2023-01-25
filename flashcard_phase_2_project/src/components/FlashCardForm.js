@@ -1,10 +1,19 @@
 import {useState} from 'react'
 
 function FlashCardForm({addCards}) {
-    const [title, setTitle] = useState ("")
-    const [question, setQuestion] = useState ("")
-    const [answer, setAnswer] = useState ("")
-    const [image, setImage] = useState ("")
+
+  const initialFormData = {
+    title: '',
+    question: '',
+    answer: '',
+    image: ''
+  }
+
+  const [formData, setFormData]=useState(initialFormData)
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -13,32 +22,27 @@ function FlashCardForm({addCards}) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            title: title,
-            question: question,
-            answer: answer,
-            image: image
-          }),
+          body: JSON.stringify(formData),
         })
         .then(response => response.json())
-        .then((newCard) => addCards(newCard))
+        .then(() => addCards(formData))
+
+        setFormData(initialFormData)
        }
       
-    const handleAddClick = (e) => {
-        
-    }
+
     return (
         <div>
             <h1>Create a Flashcard</h1> 
             <form onSubmit={handleSubmit}>
-                <input type='text' name="title" placeholder="Title" value={title} 
-                onChange={(e) => setTitle(e.target.value)}/>
-                <input type='text' name="question" placeholder="Question" value={question}
-                onChange={(e) => setQuestion(e.target.value)}/>
-                <input type='text' name="answer" placeholder="Answer" value={answer}
-                onChange={(e) => setAnswer(e.target.value)}/>
-                <input type='text' name="image" placeholder="image url" value={image}
-                onChange={(e)=> setImage(e.target.value)}/>
+                <input type='text' name="title" placeholder="Title" value={formData.title} 
+                onChange={handleChange}/>
+                <input type='text' name="question" placeholder="Question" value={formData.question}
+                onChange={handleChange}/>
+                <input type='text' name="answer" placeholder="Answer" value={formData.answer}
+                onChange={handleChange}/>
+                <input type='text' name="image" placeholder="image url" value={formData.image}
+                onChange={handleChange}/>
                 <button type='submit'> Create </button>
             </form>
         </div>
