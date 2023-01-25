@@ -34,7 +34,7 @@ function App() {
     const updatedCards = [...cardList, newCard];
     setCardList(updatedCards)
   }
-
+  
   //Display Cards via Search: Question or Title
   const filteredCards = cardList.filter(card => (
     card.question.toLowerCase().includes(searchTerm.toLowerCase()) || card.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -58,14 +58,9 @@ function App() {
          return card 
       }
     })
-    console.log(updatedCards)
     setCardList(updatedCards)
   }
 
-  
-  
-  
-  
   
 
   return (
@@ -82,6 +77,7 @@ function App() {
         <Route path='/create_new_cards'>
           <FlashCardForm 
             addCards={addCards}
+            setCardList={setCardList}
           />
         </Route>
 

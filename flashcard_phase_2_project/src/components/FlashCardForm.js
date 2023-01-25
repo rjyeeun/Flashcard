@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function FlashCardForm({addCards}) {
+function FlashCardForm({addCards, setCardList}) {
 
   const initialFormData = {
     title: '',
@@ -30,6 +30,11 @@ function FlashCardForm({addCards}) {
     .then(() => {
       addCards(formData)
       setFormData(initialFormData)
+
+      //fetch the updated card list from server and update the state of cardList
+      fetch("http://localhost:8001/card")
+      .then(response => response.json())
+      .then(data => setCardList(data))
     })
     .catch(error => (alert(error)))
   }
