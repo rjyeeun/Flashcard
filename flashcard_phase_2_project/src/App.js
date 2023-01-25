@@ -10,13 +10,13 @@ import Favorites from './components/Favorites';
 
 function App() {
 
-  const url = 'http://localhost:8001/card'
-
   //States
   const [cardList, setCardList] = useState([])
   const [searchTerm, setSearch] = useState("")
   const [favoriteCardList, setFavoriteCardList]=([])
 
+  const url = 'http://localhost:8001/card'
+  const favoriteCards = cardList.filter((favoriteCard) => favoriteCard.favorite === true)
 
   const changeSearch = (value) => {
     setSearch(value)
@@ -63,7 +63,7 @@ function App() {
   }
 
   
-  // const favoriteCards = favoriteCardList.filter((favoriteCard) => favoriteCard.favorite === true)
+  
   
   
   
@@ -80,7 +80,9 @@ function App() {
         </Route>
 
         <Route path='/create_new_cards'>
-          <FlashCardForm addCards = {addCards}/>
+          <FlashCardForm 
+            addCards={addCards}
+          />
         </Route>
 
         <Route path='/cards/study'>
@@ -95,7 +97,10 @@ function App() {
         
         <Route path='/cards/favorites'>
           <Favorites 
-            // favoriteCards={favoriteCards}
+            favoriteCards={favoriteCards}
+            searchTerm={searchTerm}
+            changeSearch={changeSearch}
+            toggleFavorite={toggleFavorite}
           />
         </Route>
 
