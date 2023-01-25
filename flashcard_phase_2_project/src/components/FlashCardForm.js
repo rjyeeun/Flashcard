@@ -30,7 +30,7 @@ function FlashCardForm({addCards}) {
       addCards(formData)
       setFormData(initialFormData)
     })
-    // .catch(alert('Error'))
+    .catch(error => (console.error(error)))
   }
       
   return (
