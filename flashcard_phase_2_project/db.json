@@ -27,20 +27,6 @@
       "question": "What does the '!' mean?",
       "answer": "'!' is know as the 'bang' or 'not' operator. It is used to negate or invert the value of a boolean expression.",
       "image": "https://miro.medium.com/max/260/1*d2twRcd3t6b0e3rwZokwyw.png"
-    },
-    {
-      "title": "random",
-      "question": "how r u",
-      "answer": "fine",
-      "image": "",
-      "id": "wgwjFu0"
-    },
-    {
-      "title": "test",
-      "question": "test",
-      "answer": "test",
-      "image": "",
-      "id": "6nw_wyH"
     }
   ]
 }

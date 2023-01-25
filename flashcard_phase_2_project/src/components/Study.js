@@ -11,7 +11,7 @@ function Study ({card}) {
 
     return (
         <div className='container'  >
-        <div onClick={toggleStudy} className='card' style={{background: isFront ? '#26d83e':'#ff69b4'}}>
+        <div onClick={toggleStudy} className='card' style={{background: isFront ? '#E7F150':'#1dace6'}}>
         {/* <p>{isFront?question:answer }</p> */}
             {isFront? (
                 <h2 className="front">{title}
