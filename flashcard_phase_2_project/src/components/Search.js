@@ -9,7 +9,7 @@ import React from 'react'
 
   return (
     <div className="search_container">
-        <span>Search </span>
+        <span>🔍</span>
         <input
           value={searchTerm} 
           className="inputBox" 

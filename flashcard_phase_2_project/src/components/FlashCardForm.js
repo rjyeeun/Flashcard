@@ -17,7 +17,7 @@ function FlashCardForm({addCards}) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("http://localhost:8001/decks", {
+        fetch("http://localhost:8001/card", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -32,8 +32,8 @@ function FlashCardForm({addCards}) {
       
 
     return (
-        <div>
-            <h1>Create a Flashcard</h1> 
+        <div className="form-style-6">
+        <h1>Create a Flashcard</h1> 
             <form onSubmit={handleSubmit}>
                 <input type='text' name="title" placeholder="Title" value={formData.title} 
                 onChange={handleChange}/>
@@ -41,9 +41,9 @@ function FlashCardForm({addCards}) {
                 onChange={handleChange}/>
                 <input type='text' name="answer" placeholder="Answer" value={formData.answer}
                 onChange={handleChange}/>
-                <input type='text' name="image" placeholder="image url" value={formData.image}
+                <input type='text' name="image" placeholder="Image url" value={formData.image}
                 onChange={handleChange}/>
-                <button type='submit'> Create </button>
+                <input type='submit' value="Create"/>
             </form>
         </div>
     )

@@ -10,7 +10,7 @@ import Favorites from './components/Favorites';
 
 function App() {
 
-  const url = 'http://localhost:8001/decks'
+  const url = 'http://localhost:8001/card'
   const [cardList, setCardList] = useState([])
   const [searchTerm, setSearch] = useState("")
 
@@ -32,6 +32,12 @@ function App() {
     card.question.toLowerCase().includes(searchTerm.toLowerCase()) || card.title.toLowerCase().includes(searchTerm.toLowerCase())
   ))
 
+  //delete cards
+  const onDeleteCard = (id) => {
+    const updatedCardsList = cardList.filter( (card) => card.id !== id )
+    setCardList(updatedCardsList)
+  }
+
   return (
     <div>
       
@@ -52,6 +58,7 @@ function App() {
               cardList={filteredCards}
               searchTerm={searchTerm}
               setSearch={setSearch}
+              onDeleteCard={onDeleteCard}
           />
         </Route>
         
@@ -64,6 +71,7 @@ function App() {
             cardList={filteredCards}
             searchTerm={searchTerm}
             setSearch={setSearch}
+            onDeleteCard={onDeleteCard}
           />
         </Route>
 
