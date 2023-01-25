@@ -26,10 +26,11 @@ function FlashCardForm({addCards}) {
       body: JSON.stringify(formData),
     })
     .then(response => response.json())
-    .then(() => 
-      addCards(formData),
+    .then(() => {
+      addCards(formData)
       setFormData(initialFormData)
-    )
+    })
+    // .catch(alert('Error'))
   }
       
   return (

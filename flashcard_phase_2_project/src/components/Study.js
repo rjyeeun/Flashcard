@@ -20,7 +20,7 @@ function Study ({card, onDeleteCard}) {
     return (
         <div className='container'>
             <div onClick={toggleStudy} className='card' style={{background: isFront ? '#E7F150':'#1dace6'}}>
-                <h1 onClick={handleDeleteStudyCard}><MdDoneOutline/></h1>
+                <h1 className='delete' onClick={handleDeleteStudyCard}><MdDoneOutline/></h1>
                 {isFront? (
                     <h2 className="front">{title}
                         <div className="question"> {question}</div>

@@ -16,6 +16,11 @@ function App() {
   const [cardList, setCardList] = useState([])
   const [searchTerm, setSearch] = useState("")
 
+
+  const changeSearch = (value) => {
+    setSearch(value)
+  }
+
   //Initial Fetch All Flash Card Decks
   useEffect(() => {
     fetch(url)
@@ -59,7 +64,7 @@ function App() {
           <StudyCardList 
               cardList={filteredCards}
               searchTerm={searchTerm}
-              setSearch={setSearch}
+              changeSearch={changeSearch}
               onDeleteCard={onDeleteCard}
           />
         </Route>
@@ -72,7 +77,7 @@ function App() {
           <FlashCardList 
             cardList={filteredCards}
             searchTerm={searchTerm}
-            setSearch={setSearch}
+            changeSearch={changeSearch}
             onDeleteCard={onDeleteCard}
           />
         </Route>
