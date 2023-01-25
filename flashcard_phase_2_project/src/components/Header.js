@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom' 
-import Home from './Home'
+
+
 
 function Header () {
 
     return (
-
-            <div>
-                <Link to = "/" className="title">Sticky Study</Link>
+        <div>
+            <Link to = "/" className="title">Sticky Study</Link>
+            <div className="flex_Container">  
+                <Link to = "/cards" className="myFlashcard" >My Flashcards</Link>
+                <Link to = "/cards/study" className="study" >Study</Link>
+                <Link to = "/cards/favorites" className="favorites">Favorites</Link>
                 <Link to = "/create_new_cards" className="createNew">Create Flashcards</Link>
-                <Link to = "/decks" className="myFlashcard" >My Flashcards</Link>
-                <Link to = "/decks/:id/study" className="study" >Study</Link>
-                <Link to = "/decks/1" className="favorites">Favorites</Link>
             </div>
+        </div>
     )
 }
 

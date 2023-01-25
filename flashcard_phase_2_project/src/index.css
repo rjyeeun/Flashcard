@@ -14,53 +14,57 @@
     font-family: 'Chivo-Bold', sans-serif;
     display: inline-block;
     position: relative;
-    font-size: 50px;
+    font-size: 70px;
     font-weight: bold;
     text-align: center;
     text-decoration:none;
     color:#000;
     background: #E7F150;
     display:block;
-    height:1.5em;
-    width:10em;
-    padding:1em;
+    height:1.4em;
+    width:8em;
+    padding:13px;
     box-shadow: 5px 5px 7px #E7F150;
     margin: auto;
+    margin-bottom: 50px;
     border-bottom-right-radius: 60px 5px;
 }
 .title:hover{
     border-bottom-right-radius: 5px;
-    width: 10em;
-    height: 1.5em;
-    background: linear-gradient(-30deg, transparent 1.5em, #E7F150 0);
+    background: linear-gradient(-30deg, transparent 1em, #E7F150 0);
+}
+
+.flex_Container {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    width: auto;
+    
 }
 
 .createNew {
     font-family: 'Sticky Notes', sans-serif;
+    display: flex;
     font-size: xx-large;
     text-align: center;
     text-decoration:none;
     color:#000; 
-    background: #FBAE3C;
-    display:flex;
+    background: #ffd938;
     justify-content: center;
     align-items: center;
-    position: relative;
     height:1em;
     width:7em;
     padding:1em;
-    box-shadow: 5px 5px 7px #FBAE3C;
-    transform: rotate(-6deg);
-    transition: transform .15s linear;
-    margin-left: 250px;
-    margin-top: 50px;
+    box-shadow: 5px 5px 7px #ffd938;
+    transform: rotate(-6deg); 
+    transition: transform .15s linear; 
 }
 
 .createNew:hover {
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
-    background: linear-gradient(-30deg, transparent 1.5em, #FBAE3C 0)
+    background: linear-gradient(-30deg, transparent 1.5em, #ffd938 0)
 }
 
 .myFlashcard {
@@ -69,24 +73,22 @@
     text-align: center;
     text-decoration:none;
     color:#000;
-    background: #FD4DB0;
+    background: #fbae3c;
     display:block;
+    justify-content: center;
     height:1em;
     width:7em;
     padding:1em;
-    box-shadow: 5px 5px 7px #FD4DB0;
+    box-shadow: 5px 5px 7px #fbae3c;
     transform: rotate(6deg);
     transition: transform .15s linear;
-    margin: auto;
-    margin-left: 630px;
-    margin-top: -95px
 }
 
 .myFlashcard:hover {
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
-    background: linear-gradient(-30deg, transparent 1.5em, #FD4DB0 0)
+    background: linear-gradient(-30deg, transparent 1.5em, #fbae3c 0)
 }
 .study {
     font-family: 'Sticky Notes', sans-serif;
@@ -94,23 +96,20 @@
     text-align: center;
     text-decoration:none;
     color:#000;
-    background: #1DACE6;
+    background: #fd4db0;
     display:block;
     height:1em;
     width:7em;
     padding:1em;
-    box-shadow: 5px 5px 7px #1DACE6;
+    box-shadow: 5px 5px 7px #fd4db0;
     transform: rotate(-6deg);
-    transition: transform .15s linear;
-    margin: auto;
-    margin-left: 1000px;
-    margin-top: -95px
+    transition: transform .15s linear; 
 }
 .study:hover {
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
-    background: linear-gradient(-30deg, transparent 1.5em, #1dace6 0)
+    background: linear-gradient(-30deg, transparent 1.5em, #fd4db0 0)
 }
 .favorites {
     font-family: 'Sticky Notes', sans-serif;
@@ -118,49 +117,169 @@
     text-align: center;
     text-decoration:none;
     color:#000;
-    background: #FFD938;
+    background: #1dace6;
     display:block;
     height:1em;
     width:7em;
     padding:1em;
-    box-shadow: 5px 5px 7px #FFD938;
+    box-shadow: 5px 5px 7px #1dace6;
     transform: rotate(6deg);
     transition: transform .15s linear;
-    position: relative;
-    margin-left: 1380px;
-    margin-top: -95px
+  
 }
 .favorites:hover {
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
-    background: linear-gradient(-30deg, transparent 1.5em, #ffd938 0)
+    background: linear-gradient(-30deg, transparent 1.5em, #1dace6 0)
 }
-.container {
-    cursor: pointer;
+/* .container {
     padding: 0.5em;
     display: grid;
-
-}
+    justify-content: space-evenly
+} */
 .card {
-    padding: 2em;
-    box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
-    background-color: #E7F150;
-    position: relative;
+    cursor: pointer;
+    font-family: 'Sticky Notes', sans-serif;
+    font-size: 20;
     text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3rd
+    text-decoration:none;
+    color:#000;
+    background: #E7F150;
+    display:block;
+    min-height:30px;
+    max-width:50%;
+    padding:1%;
+    margin: 60px auto;
+    box-shadow: 5px 5px 7px #1dace6;
+    transition: transform .15s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.image {
+    margin-top: 30px;
+    border-radius: 4px;
+    width: 80%;
+    height: auto;
+    justify-content: right;
+}
 
-.front {
-    
-    color: black;
-  }
-  
-  .back {
-  
-    background-color: green; 
-    color: white;
-  }
+.search_container {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Chivo-Bold', sans-serif;
+    font-size: 30px;
+    box-sizing: 50px;
+}
 
+.inputBox {
+    border: none;
+    -webkit-appearance: none;
+    -ms-progress-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: darkgrey;
+    padding: 12px;
+    border-radius: 3px;
+    width: 250px;
+    outline: none;
+
+}
+.inputBox:hover {
+    border-bottom-right-radius: 5px;
+    background: linear-gradient(-40deg, transparent 1em, darkgrey 0)
+}
+
+.form-style-6{
+	font: 95% Chivo-Bold, Helvetica, sans-serif;
+	max-width: 400px;
+	margin: 10px auto;
+	padding: 16px;
+	background: #F7F7F7;
+    margin-top: 100px;
+}
+.form-style-6 h1{
+	background: grey;
+	padding: 20px 0;
+	font-size: 140%;
+	font-weight: 300;
+	text-align: center;
+	color: #fff;
+	margin: -16px -16px 16px -16px;
+}
+.form-style-6 input[type="text"],
+.form-style-6 input[type="date"],
+.form-style-6 input[type="datetime"],
+.form-style-6 input[type="email"],
+.form-style-6 input[type="number"],
+.form-style-6 input[type="search"],
+.form-style-6 input[type="time"],
+.form-style-6 input[type="url"],
+.form-style-6 textarea,
+.form-style-6 select 
+{
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: #555;
+	font: 95% Arial, Helvetica, sans-serif;
+}
+.form-style-6 input[type="text"]:focus,
+.form-style-6 input[type="date"]:focus,
+.form-style-6 input[type="datetime"]:focus,
+.form-style-6 input[type="email"]:focus,
+.form-style-6 input[type="number"]:focus,
+.form-style-6 input[type="search"]:focus,
+.form-style-6 input[type="time"]:focus,
+.form-style-6 input[type="url"]:focus,
+.form-style-6 textarea:focus,
+.form-style-6 select:focus
+{
+	box-shadow: 0 0 5px #E7F150;
+	padding: 3%;
+	border: 1px solid #E7F150;
+}
+
+.form-style-6 input[type="submit"],
+.form-style-6 input[type="button"]{
+    font: Chivo-Bold, Monaco, Consolas, "Courier New", monospace;
+    font-size: large;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	padding: 3%;
+	background: grey;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;	
+	color: #fff;
+}
+.form-style-6 input[type="submit"]:hover,
+.form-style-6 input[type="button"]:hover{
+    border-bottom-right-radius: 5px;
+    background: linear-gradient(-30deg, transparent 1em, darkgrey 0)
+}
+.home_img {
+    height: auto;
+    max-width: 38%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    position: relative;
+}
