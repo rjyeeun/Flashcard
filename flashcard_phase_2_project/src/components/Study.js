@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+import {MdDoneOutline} from 'react-icons/md'
 
-function Study ({card}) {
+function Study ({card, onDeleteCard}) {
     const [isFront, setIsFront]=useState(true)
 
     const toggleStudy = () => {    
@@ -9,9 +10,14 @@ function Study ({card}) {
 
     const {id, title, question, answer, image} = card
 
+    const handleDeleteStudyCard = () => {
+        onDeleteCard(id)
+    }
+
     return (
-        <div className='container'  >
+        <div className='container'>
         <div onClick={toggleStudy} className='card' style={{background: isFront ? '#E7F150':'#1dace6'}}>
+            <h1 onClick={handleDeleteStudyCard}><MdDoneOutline/></h1>
         {/* <p>{isFront?question:answer }</p> */}
             {isFront? (
                 <h2 className="front">{title}
