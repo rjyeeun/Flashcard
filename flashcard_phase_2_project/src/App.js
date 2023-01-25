@@ -11,6 +11,8 @@ import Favorites from './components/Favorites';
 function App() {
 
   const url = 'http://localhost:8001/card'
+
+  //States
   const [cardList, setCardList] = useState([])
   const [searchTerm, setSearch] = useState("")
 
@@ -21,18 +23,18 @@ function App() {
     .then(data => setCardList(data))
   },[])
 
-  //add cards after submitting form
+  //Add a New Card to the List of Cards
   const addCards = (newCard) => {
     const updatedCards = [...cardList, newCard];
     setCardList(updatedCards)
   }
 
-  //filtering search function
+  //Display Cards via Search: Question or Title
   const filteredCards = cardList.filter(card => (
     card.question.toLowerCase().includes(searchTerm.toLowerCase()) || card.title.toLowerCase().includes(searchTerm.toLowerCase())
   ))
 
-  //delete cards
+  //Update Card List after Deleting a Card
   const onDeleteCard = (id) => {
     const updatedCardsList = cardList.filter( (card) => card.id !== id )
     setCardList(updatedCardsList)

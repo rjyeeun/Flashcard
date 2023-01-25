@@ -3,7 +3,6 @@ import React from 'react'
  function Search({searchTerm, setSearch}) {
 
   const handleChange = (e) => {
- 
     setSearch(e.target.value);
   }
 
@@ -17,8 +16,7 @@ import React from 'react'
           id="search" 
           placeholder='Looking for something?' 
           onChange={handleChange} 
-        />
-        
+        />  
     </div>
   )
 }

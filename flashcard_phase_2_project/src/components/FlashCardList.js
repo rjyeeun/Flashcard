@@ -2,7 +2,8 @@ import FlashCard from './FlashCard'
 import Search from './Search'
 
 function FlashCardList({ cardList, searchTerm, setSearch, onDeleteCard}) {
-    // Create an Array of Decks
+
+    // Create an Array of Cards for FlashCard Component
     const flashCard = cardList.map(card =>(
         <FlashCard 
             key={card.id}

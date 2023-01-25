@@ -2,7 +2,8 @@ import Study from './Study'
 import Search from './Search'
 
 function StudyCardList({ cardList, searchTerm, setSearch, onDeleteCard}) {
-    // Create an Array of Decks
+    
+    // Create an Array of Cards for Study Component
     const studyCard = cardList.map(card =>(
         <Study 
             key={card.id}
