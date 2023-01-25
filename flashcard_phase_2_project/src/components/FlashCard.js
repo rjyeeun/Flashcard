@@ -20,6 +20,7 @@ function FlashCard({card, onDeleteCard}) {
                 <h2 className="front" style={{fontSize: 50}}>{title}</h2>
                 <p style={{fontSize: 30}}> {question}</p>
                 <h1 className='delete' onClick={handleDeleteClick}><CiSquareRemove /></h1>
+                <button>Favorite</button>
             </div>
             <div className='myCard' style={{background: '#1dace6'}}>
                 <h2 className="back" >{answer}<img className="image" src={image}/></h2> 

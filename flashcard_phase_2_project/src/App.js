@@ -15,6 +15,7 @@ function App() {
   //States
   const [cardList, setCardList] = useState([])
   const [searchTerm, setSearch] = useState("")
+  const [isFavorite, setIsFavorite] = useState(false)
 
 
   const changeSearch = (value) => {
@@ -45,6 +46,24 @@ function App() {
     setCardList(updatedCardsList)
   }
 
+  //Toggle Favorite
+  const toggleFavorite = (id) => {
+    // setIsFavorite(isFavorite => !isFavorite)
+    const updatedCards = cardList.map(card => {
+      console.log(card.id, id)
+      if (card.id === id) {
+          return {
+              ...card,
+              favorite: !card.favorite
+          }
+      } else {
+         return card 
+      }
+    })
+    console.log(updatedCards)
+    setCardList(updatedCards)
+  }
+
   return (
     <div>
       
@@ -61,7 +80,8 @@ function App() {
         </Route>
 
         <Route path='/cards/study'>
-          <StudyCardList 
+          <StudyCardList
+              toggleFavorite={toggleFavorite} 
               cardList={filteredCards}
               searchTerm={searchTerm}
               changeSearch={changeSearch}
@@ -69,7 +89,7 @@ function App() {
           />
         </Route>
         
-        <Route path='/cards/1'>
+        <Route path='/cards/favorites'>
           <Favorites />
         </Route>
 

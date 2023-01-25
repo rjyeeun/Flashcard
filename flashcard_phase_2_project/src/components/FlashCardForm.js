@@ -6,7 +6,8 @@ function FlashCardForm({addCards}) {
     title: '',
     question: '',
     answer: '',
-    image: ''
+    image: '',
+    favorite: false
   }
 
   const [formData, setFormData]=useState(initialFormData)
@@ -30,7 +31,7 @@ function FlashCardForm({addCards}) {
       addCards(formData)
       setFormData(initialFormData)
     })
-    .catch(error => (console.error(error)))
+    .catch(error => (alert(error)))
   }
       
   return (
