@@ -17,7 +17,7 @@ function FlashCardForm({addCards}) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("http://localhost:8001/decks", {
+        fetch("http://localhost:8001/card", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
