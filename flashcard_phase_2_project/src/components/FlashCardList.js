@@ -2,6 +2,7 @@ import FlashCard from './FlashCard'
 import Search from './Search'
 import React from 'react'
 
+
 function FlashCardList({ cardList, searchTerm, changeSearch, onDeleteCard, toggleFavorite}) {
 
     // Create an Array of Cards for FlashCard Component
@@ -12,7 +13,7 @@ function FlashCardList({ cardList, searchTerm, changeSearch, onDeleteCard, toggl
             onDeleteCard={onDeleteCard}
             toggleFavorite={toggleFavorite}
         />
- 
+  
         
     ))
 

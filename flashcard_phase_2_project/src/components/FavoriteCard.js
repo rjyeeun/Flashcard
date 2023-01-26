@@ -4,7 +4,7 @@ import {MdFavoriteBorder} from 'react-icons/md'
 import {TiThumbsOk} from 'react-icons/ti'
 
 
-function Study ({card, onDeleteCard, toggleFavorite}) {
+function FavoriteCard ({card, toggleFavorite, onDeleteCard}) {
 
     const [isFront, setIsFront]=useState(true)
 
@@ -41,7 +41,7 @@ function Study ({card, onDeleteCard, toggleFavorite}) {
         })
         .catch(error => (console.error(error)))
     }
-
+        
     return (
         <div>
             <div onClick={toggleStudy} className='card' style={{background: isFront ? '#E7F150':'#1dace6'}}>
@@ -74,5 +74,4 @@ function Study ({card, onDeleteCard, toggleFavorite}) {
   }
 
 
-
-export default Study
+export default FavoriteCard

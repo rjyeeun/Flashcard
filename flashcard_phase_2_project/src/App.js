@@ -8,15 +8,17 @@ import FlashCardForm from './components/FlashCardForm';
 import StudyCardList from './components/StudyCardList.js';
 import Favorites from './components/Favorites';
 
-function App() {
 
-  const url = 'http://localhost:8001/card'
+function App() {
 
   //States
   const [cardList, setCardList] = useState([])
   const [searchTerm, setSearch] = useState("")
-  const [favoriteCardList, setFavoriteCardList]=([])
+  const [cardId, setCardId] = useState(null)
 
+  const url = 'http://localhost:8001/card'
+
+  const favoriteCards = cardList.filter((favoriteCard) => favoriteCard.favorite === true)
 
   const changeSearch = (value) => {
     setSearch(value)
@@ -34,6 +36,7 @@ function App() {
     const updatedCards = [...cardList, newCard];
     setCardList(updatedCards)
   }
+  
 
   //Display Cards via Search: Question or Title
   const filteredCards = cardList.filter(card => (
@@ -58,20 +61,15 @@ function App() {
          return card 
       }
     })
-    console.log(updatedCards)
     setCardList(updatedCards)
   }
-
-  
-  // const favoriteCards = favoriteCardList.filter((favoriteCard) => favoriteCard.favorite === true)
-  
-  
-  
 
   return (
     <div>
       
-      <Header />
+      <Header 
+        setCardList={setCardList}
+      />
 
       <Switch>
 
@@ -80,7 +78,10 @@ function App() {
         </Route>
 
         <Route path='/create_new_cards'>
-          <FlashCardForm addCards = {addCards}/>
+          <FlashCardForm 
+            addCards={addCards}
+            setCardList={setCardList}
+          />
         </Route>
 
         <Route path='/cards/study'>
@@ -95,7 +96,10 @@ function App() {
         
         <Route path='/cards/favorites'>
           <Favorites 
-            // favoriteCards={favoriteCards}
+            favoriteCards={favoriteCards}
+            searchTerm={searchTerm}
+            changeSearch={changeSearch}
+            toggleFavorite={toggleFavorite}
           />
         </Route>
 
@@ -105,8 +109,7 @@ function App() {
             searchTerm={searchTerm}
             changeSearch={changeSearch}
             onDeleteCard={onDeleteCard}
-            toggleFavorite={toggleFavorite} 
-          />
+            toggleFavorite={toggleFavorite}  />
         </Route>
 
       </Switch>

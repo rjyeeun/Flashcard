@@ -1,4 +1,7 @@
-import {CiSquareRemove} from 'react-icons/ci'
+import {MdDeleteForever} from 'react-icons/md'
+import {MdFavorite} from 'react-icons/md'
+import {MdFavoriteBorder} from 'react-icons/md'
+import {FaPencilAlt} from 'react-icons/fa'
 
 
 function FlashCard({card, onDeleteCard, toggleFavorite}) {
@@ -34,24 +37,30 @@ function FlashCard({card, onDeleteCard, toggleFavorite}) {
         })
         .catch(error => (console.error(error)))
     }
-        
+    
 
     return (
         <>
-            <div className='card' style={{background: '#E7F150'}}>
-                <h2 style={{fontSize: 50}}>{title}</h2>
-                <p style={{fontSize: 30}}> {question}</p>
-                <h1 className='delete' onClick={handleDeleteClick}><CiSquareRemove /></h1>
-                <button
-                    type="text"
-                    value={favorite}
-                    onClick={(e) => {
-                        e.stopPropagation()
-                        handleToggleFavorite(id, e.target.value)}}
-                >{card.favorite?  "★" : "☆"}</button>
+            <div className="questionCard">
+            <div className="btn_container">    
+                    <figure className='favorite_btn'                 
+                        type="text"
+                        value={favorite}
+                        onClick={(e) => {
+                            e.stopPropagation()
+                            handleToggleFavorite(id, e.target.value)}}
+                        >{card.favorite?  <MdFavorite/> : <MdFavoriteBorder/>}
+                    </figure>
+                </div>
+                <h2 className="front" style={{fontSize: 50}}>{title}</h2>
+                <p className="question"style={{fontSize: 30}}> Q: {question}</p>
+                <div className="btn_container">
+                    <h1 className='edit_btn'><FaPencilAlt/></h1>
+                    <h1 className='delete_btn' onClick={handleDeleteClick}><MdDeleteForever /></h1> 
+                </div>        
             </div>
-            <div className='card' style={{background: '#1dace6'}}>
-                <h2>{answer}<img className="image" src={image}/></h2> 
+            <div className='answerCard' style={{background: '#1dace6'}}>
+                <p className="answer">{answer}<img className="image" src={image}/></p> 
             </div>
         </>
 

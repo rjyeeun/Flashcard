@@ -1,3 +1,6 @@
+#body {
+    background: rgb(223, 218, 218);
+}
 
 @font-face {
     font-family: 'Sticky Notes';
@@ -9,6 +12,8 @@
     src: url(./fonts/Chivo-Bold.ttf);
 
 }
+
+
 
 .title {
     font-family: 'Chivo-Bold', sans-serif;
@@ -29,9 +34,10 @@
     margin-bottom: 50px;
     border-bottom-right-radius: 60px 5px;
 }
-.title:hover{
+.title:hover, .title:focus{
     border-bottom-right-radius: 5px;
     background: linear-gradient(-30deg, transparent 1em, #E7F150 0);
+    text-shadow: 0 0 5px #fff, 0 0 10px rgb(253, 253, 253), 0 0 15px rgb(191, 191, 191), 0 0 20px #6c706b
 }
 
 .flex_Container {
@@ -60,13 +66,13 @@
     transition: transform .15s linear; 
 }
 
-.createNew:hover {
+.createNew:hover, .createNew:focus {
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
-    background: linear-gradient(-30deg, transparent 1.5em, #ffd938 0)
+    background: linear-gradient(-30deg, transparent 1.5em, #ffd938 0);
+    text-shadow: 0 0 10px rgb(255, 255, 255);
 }
-
 .myFlashcard {
     font-family: 'Sticky Notes', sans-serif;
     font-size: xx-large;
@@ -84,11 +90,12 @@
     transition: transform .15s linear;
 }
 
-.myFlashcard:hover {
+.myFlashcard:hover, .myFlashcard:focus {
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
-    background: linear-gradient(-30deg, transparent 1.5em, #fbae3c 0)
+    background: linear-gradient(-30deg, transparent 1.5em, #fbae3c 0);
+    text-shadow: 0 0 10px rgb(245, 244, 244);
 }
 .study {
     font-family: 'Sticky Notes', sans-serif;
@@ -105,11 +112,12 @@
     transform: rotate(-6deg);
     transition: transform .15s linear; 
 }
-.study:hover {
+.study:hover, .study:focus {
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
-    background: linear-gradient(-30deg, transparent 1.5em, #fd4db0 0)
+    background: linear-gradient(-30deg, transparent 1.5em, #fd4db0 0);
+    text-shadow: 0 0 5px white;
 }
 .favorites {
     font-family: 'Sticky Notes', sans-serif;
@@ -127,22 +135,18 @@
     transition: transform .15s linear;
   
 }
-.favorites:hover {
+.favorites:hover, .favorites:focus {
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
-    background: linear-gradient(-30deg, transparent 1.5em, #1dace6 0)
+    background: linear-gradient(-30deg, transparent 1.5em, #1dace6 0);
+    text-shadow: 0 0 10px white;
 }
-/* .container {
-    padding: 0.5em;
-    display: grid;
-    justify-content: space-evenly
-} */
+
 .card {
     cursor: pointer;
     font-family: 'Sticky Notes', sans-serif;
     font-size: 20;
-    text-align: center;
     text-decoration:none;
     color:#000;
     background: #E7F150;
@@ -153,9 +157,39 @@
     margin: 60px auto;
     box-shadow: 5px 5px 7px #1dace6;
     transition: transform .15s linear;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.answerCard {
+    cursor: pointer;
+    font-family: 'Sticky Notes', sans-serif;
+    font-size: 20;
+    text-decoration:none;
+    color:#000;
+    background: #E7F150;
+    display:block;
+    min-height:30px;
+    max-width:50%;
+    padding:1%;
+    margin: auto;
+    box-shadow: 5px 5px 7px #1dace6;
+    transition: transform .15s linear;
+}
+
+.questionCard {
+    cursor: pointer;
+    font-family: 'Sticky Notes', sans-serif;
+    font-size: 20;
+    text-decoration:none;
+    color:#000;
+    background: #E7F150;
+    display:block;
+    min-height:30px;
+    max-width:50%;
+    padding:1%;
+    margin: auto;
+    margin-top: 60px;
+    box-shadow: 5px 5px 7px #1dace6;
+    transition: transform .15s linear;
 }
 
 .image {
@@ -272,7 +306,11 @@
 .form-style-6 input[type="submit"]:hover,
 .form-style-6 input[type="button"]:hover{
     border-bottom-right-radius: 5px;
-    background: linear-gradient(-30deg, transparent 1em, darkgrey 0)
+    background: linear-gradient(-30deg, transparent 1em, darkgrey 0);
+    cursor: pointer
+}
+.home_container {
+    position: relative;
 }
 .home_img {
     height: auto;
@@ -282,4 +320,107 @@
     margin-right: auto;
     margin-top: 30px;
     position: relative;
+}
+.first-txt {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: black;
+    text-align: center;
+    font-family: Chivo-Bold;
+    font-size: 28px;
+    text-shadow: 0 0 10px rgb(87, 251, 50);
+}
+.second-txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: black;
+    text-align: center;
+    font-family: Chivo-Bold;
+    font-size: 23px;
+    text-shadow: 0 0 10px rgb(251, 50, 217);
+}
+.third-txt {
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+    opacity:1;
+    transition: opacity 0.5s;
+}
+.third-txt:hover {
+    color: #fd4db0;
+    cursor: grab;
+}
+.delete {
+    border-radius: 5px;
+    background: white
+}
+.favorite_btn:hover {
+    color: #fd4db0;
+    cursor: grab;
+}
+.favorite_btn{
+    font-size: 35px;
+    display: flex;
+    align-items: stretch;
+    justify-content: right;
+}
+.delete_btn:hover {
+    color: red;
+    cursor: grab
+}
+.delete_btn {
+    padding: 10px;
+    display: flex;
+    align-items: end;
+    justify-content: right;
+}
+.edit_btn:hover {
+    color: #53c8f6;
+    cursor: grab;
+}
+.edit_btn {
+    padding: 10px;
+    display: flex;
+    align-items: end;
+}
+.study_delete:hover {
+    color: #007e1f;
+    cursor: grab;
+}
+.study_delete {
+    font-size: 35px;
+    display: flex;
+    align-items: end;
+    justify-content: right;
+}
+.front {
+    font-size: 60px;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+.question {
+    text-align: center;
+    font-size: 35px;
+}
+.answer {
+    text-align: center;
+    font-size: 35px;
+}
+.btn_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
 }

@@ -14,7 +14,7 @@
       "question": "What is Declarative Programming?",
       "answer": "Declarative programming is a style of programming where the focus is on describing the desired outcome, rather than specifying the steps to achieve it.",
       "image": "https://www.educative.io/v2api/editorpage/5244002156937216/image/5702712784322560",
-      "favorite": false
+      "favorite": true
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "question": "What is the difference between == and ===?",
       "answer": "== compares values for equality without considering data types, while === compares both value and data type for equality.",
       "image": "https://miro.medium.com/max/1164/1*EEsRb-DDdA5UrqGndEqEeg.png",
-      "favorite": false
+      "favorite": true
     },
     {
       "id": 4,
