@@ -3,7 +3,7 @@ import Search from './Search'
 import React from 'react'
 
 
-function FlashCardList({ cardList, searchTerm, changeSearch, onDeleteCard, toggleFavorite}) {
+function FlashCardList({ cardList, searchTerm, changeSearch, onDeleteCard, toggleFavorite, setEditCard, handleEditClick}) {
 
     // Create an Array of Cards for FlashCard Component
     const flashCard = cardList.map(card =>(
@@ -11,7 +11,9 @@ function FlashCardList({ cardList, searchTerm, changeSearch, onDeleteCard, toggl
             key={card.id}
             card={card}
             onDeleteCard={onDeleteCard}
+            setEditCard={setEditCard}
             toggleFavorite={toggleFavorite}
+            handleEditClick={handleEditClick}
         />
   
         

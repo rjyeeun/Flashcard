@@ -15,7 +15,7 @@ function App() {
   //States
   const [cardList, setCardList] = useState([])
   const [searchTerm, setSearch] = useState("")
-  const [cardId, setCardId] = useState(null)
+  const [editCard, setEditCard] = useState(null)
 
   const url = 'http://localhost:8001/card'
 
@@ -64,6 +64,11 @@ function App() {
     setCardList(updatedCards)
   }
 
+  const handleEditClick = (card) => {
+    setEditCard(card)
+  }
+  console.log(editCard)
+
   return (
     <div>
       
@@ -102,7 +107,10 @@ function App() {
           />
         </Route>
         <Route path= "/cards/:id/edit">
-          <EditCardForm/>
+          <EditCardForm
+            setCardList={setCardList}
+            setEditCard={setEditCard}
+            editCard={editCard}/>
         </Route>
         <Route path='/cards'>
           <FlashCardList 
@@ -110,7 +118,9 @@ function App() {
             searchTerm={searchTerm}
             changeSearch={changeSearch}
             onDeleteCard={onDeleteCard}
-            toggleFavorite={toggleFavorite}  />
+            setEditCard={setEditCard}
+            toggleFavorite={toggleFavorite}
+            handleEditClick={handleEditClick}  />
         </Route>
       </Switch>
     </div>
