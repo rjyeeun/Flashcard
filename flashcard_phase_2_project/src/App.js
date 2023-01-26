@@ -7,6 +7,7 @@ import Header from './components/Header';
 import FlashCardForm from './components/FlashCardForm';
 import StudyCardList from './components/StudyCardList.js';
 import Favorites from './components/Favorites';
+import EditCardForm from './components/EditCardForm';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
   //States
   const [cardList, setCardList] = useState([])
   const [searchTerm, setSearch] = useState("")
-  const [cardId, setCardId] = useState(null)
+  const [editCard, setEditCard] = useState(null)
 
   const url = 'http://localhost:8001/card'
 
@@ -36,7 +37,6 @@ function App() {
     const updatedCards = [...cardList, newCard];
     setCardList(updatedCards)
   }
-  
 
   //Display Cards via Search: Question or Title
   const filteredCards = cardList.filter(card => (
@@ -62,6 +62,10 @@ function App() {
       }
     })
     setCardList(updatedCards)
+  }
+
+  const handleEditClick = (card) => {
+    const thing = card
   }
 
   return (
@@ -93,7 +97,6 @@ function App() {
               onDeleteCard={onDeleteCard}
           />
         </Route>
-        
         <Route path='/cards/favorites'>
           <Favorites 
             favoriteCards={favoriteCards}
@@ -102,16 +105,25 @@ function App() {
             toggleFavorite={toggleFavorite}
           />
         </Route>
-
+        <Route path= "/cards/:id/edit">
+          <EditCardForm
+            setCardList={setCardList}
+            setEditCard={setEditCard}
+            editCard={editCard}
+            thing={thing}
+            />
+        </Route>
         <Route path='/cards'>
           <FlashCardList 
+            editCard={editCard}
             cardList={filteredCards}
             searchTerm={searchTerm}
             changeSearch={changeSearch}
             onDeleteCard={onDeleteCard}
-            toggleFavorite={toggleFavorite}  />
+            setEditCard={setEditCard}
+            toggleFavorite={toggleFavorite}
+            handleEditClick={handleEditClick}  />
         </Route>
-
       </Switch>
     </div>
   );
