@@ -65,9 +65,8 @@ function App() {
   }
 
   const handleEditClick = (card) => {
-    setEditCard(card)
+    const thing = card
   }
-  console.log(editCard)
 
   return (
     <div>
@@ -110,10 +109,13 @@ function App() {
           <EditCardForm
             setCardList={setCardList}
             setEditCard={setEditCard}
-            editCard={editCard}/>
+            editCard={editCard}
+            thing={thing}
+            />
         </Route>
         <Route path='/cards'>
           <FlashCardList 
+            editCard={editCard}
             cardList={filteredCards}
             searchTerm={searchTerm}
             changeSearch={changeSearch}

@@ -5,7 +5,7 @@ import {FaPencilAlt} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
 
 
-function FlashCard({card, onDeleteCard, toggleFavorite, setEditCard, handleEditClick}) {
+function FlashCard({card, onDeleteCard, toggleFavorite, setEditCard, handleEditClick, editCard}) {
     
     const {id, title, question, answer, image, favorite} = card
 
@@ -40,8 +40,9 @@ function FlashCard({card, onDeleteCard, toggleFavorite, setEditCard, handleEditC
     }
 
     const onEditClick = () => {
-       //  setEditCard(card)
-       handleEditClick(card)
+        setEditCard(card)
+        handleEditClick(card)
+       
     }
 
     return (

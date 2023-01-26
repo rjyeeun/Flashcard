@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 
-export default function EditCardForm({setCardList, setEditCard, editCard}) {
-        const initialFormData = {
+export default function EditCardForm({setCardList, setEditCard, editCard, handleEditClick, thing}) {
+    console.log(thing)
+
+    const initialFormData = {
             title: '',
             question: '',
             answer: '',
