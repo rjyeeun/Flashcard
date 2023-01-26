@@ -1,20 +1,17 @@
-import FlashCard from './FlashCard'
+import Study from './Study'
 import Search from './Search'
 import React from 'react'
 
-
-function FlashCardList({ cardList, searchTerm, changeSearch, onDeleteCard, toggleFavorite}) {
-
-    // Create an Array of Cards for FlashCard Component
-    const flashCard = cardList.map(card =>(
-        <FlashCard 
-            key={card.id}
+function StudyCardList({ cardList, searchTerm, changeSearch, onDeleteCard, toggleFavorite }) {
+    
+    // Create an Array of Cards for Study Component
+    const studyCard = cardList.map(card =>(
+        <Study
+            key={card.id} 
             card={card}
             onDeleteCard={onDeleteCard}
             toggleFavorite={toggleFavorite}
         />
-  
-        
     ))
 
     return (
@@ -23,10 +20,10 @@ function FlashCardList({ cardList, searchTerm, changeSearch, onDeleteCard, toggl
                 searchTerm = {searchTerm} 
                 changeSearch={changeSearch} 
             />
-            {flashCard}
+            {studyCard}
         </div>
     );
   }
 
 
-export default FlashCardList;
+export default StudyCardList;
