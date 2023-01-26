@@ -42,7 +42,6 @@ function FlashCard({card, onDeleteCard, toggleFavorite, setEditCard, handleEditC
     const onEditClick = () => {
         setEditCard(card)
         handleEditClick(card)
-       
     }
 
     return (

@@ -1,17 +1,20 @@
 import React, {useState} from 'react';
 
-export default function EditCardForm({setCardList, setEditCard, editCard, handleEditClick, thing}) {
-    console.log(thing)
+
+export default function EditCardForm({setCardList, editCard}) {
+
+    const {title, question, answer, image, favorite, id} = editCard
 
     const initialFormData = {
-            title: '',
-            question: '',
-            answer: '',
-            image: '',
-            favorite: false
+            title: title,
+            question: question,
+            answer: answer,
+            image: image,
+            favorite: favorite
           }
         
           const [formData, setFormData]=useState(initialFormData)
+          console.log(formData)
         
           const handleChange = (e) => {
             setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,8 +23,8 @@ export default function EditCardForm({setCardList, setEditCard, editCard, handle
           // Add New Card to the Server + Reset formData After Successful Submission
           const handleSubmit = (e) => {
             e.preventDefault()
-            fetch("http://localhost:8001/card", {
-              method: "POST",
+            fetch(`http://localhost:8001/card/${id}`, {
+              method: "PATCH",
               headers: {
                 "Content-Type": "application/json",
               },
@@ -29,8 +32,6 @@ export default function EditCardForm({setCardList, setEditCard, editCard, handle
             })
             .then(response => response.json())
             .then(() => {
-              // addCards(formData)
-              setFormData(initialFormData)
         
               //fetch the updated card list from server and update the state of cardList
               fetch("http://localhost:8001/card")

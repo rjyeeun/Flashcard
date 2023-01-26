@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, useParams} from 'react-router-dom'
 
 import Home from './components/Home'
 import FlashCardList from './components/FlashCardList';
@@ -65,7 +65,7 @@ function App() {
   }
 
   const handleEditClick = (card) => {
-    const thing = card
+    setEditCard(card)
   }
 
   return (
@@ -108,9 +108,7 @@ function App() {
         <Route path= "/cards/:id/edit">
           <EditCardForm
             setCardList={setCardList}
-            setEditCard={setEditCard}
             editCard={editCard}
-            thing={thing}
             />
         </Route>
         <Route path='/cards'>
