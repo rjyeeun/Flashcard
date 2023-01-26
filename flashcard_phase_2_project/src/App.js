@@ -7,6 +7,7 @@ import Header from './components/Header';
 import FlashCardForm from './components/FlashCardForm';
 import StudyCardList from './components/StudyCardList.js';
 import Favorites from './components/Favorites';
+import EditCardForm from './components/EditCardForm';
 
 
 function App() {
@@ -36,7 +37,6 @@ function App() {
     const updatedCards = [...cardList, newCard];
     setCardList(updatedCards)
   }
-  
 
   //Display Cards via Search: Question or Title
   const filteredCards = cardList.filter(card => (
@@ -93,7 +93,6 @@ function App() {
               onDeleteCard={onDeleteCard}
           />
         </Route>
-        
         <Route path='/cards/favorites'>
           <Favorites 
             favoriteCards={favoriteCards}
@@ -102,7 +101,9 @@ function App() {
             toggleFavorite={toggleFavorite}
           />
         </Route>
-
+        <Route path= "/cards/:id/edit">
+          <EditCardForm/>
+        </Route>
         <Route path='/cards'>
           <FlashCardList 
             cardList={filteredCards}
@@ -111,7 +112,6 @@ function App() {
             onDeleteCard={onDeleteCard}
             toggleFavorite={toggleFavorite}  />
         </Route>
-
       </Switch>
     </div>
   );
