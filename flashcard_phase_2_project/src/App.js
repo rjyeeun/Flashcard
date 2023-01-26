@@ -8,12 +8,13 @@ import FlashCardForm from './components/FlashCardForm';
 import StudyCardList from './components/StudyCardList.js';
 import Favorites from './components/Favorites';
 
+
 function App() {
 
   //States
   const [cardList, setCardList] = useState([])
   const [searchTerm, setSearch] = useState("")
-  const [favoriteCardList, setFavoriteCardList]=([])
+  const [cardId, setCardId] = useState(null)
 
   const url = 'http://localhost:8001/card'
 
@@ -36,6 +37,7 @@ function App() {
     setCardList(updatedCards)
   }
   
+
   //Display Cards via Search: Question or Title
   const filteredCards = cardList.filter(card => (
     card.question.toLowerCase().includes(searchTerm.toLowerCase()) || card.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -61,8 +63,6 @@ function App() {
     })
     setCardList(updatedCards)
   }
-
-  
 
   return (
     <div>
@@ -109,8 +109,7 @@ function App() {
             searchTerm={searchTerm}
             changeSearch={changeSearch}
             onDeleteCard={onDeleteCard}
-            toggleFavorite={toggleFavorite} 
-          />
+            toggleFavorite={toggleFavorite}  />
         </Route>
 
       </Switch>

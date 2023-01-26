@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom' 
+import {RxReset} from 'react-icons/rx'
 
 
 
@@ -13,7 +14,7 @@ function Header ({setCardList}) {
 
     return (
         <div>
-            <button onClick={handleReset}>Reset</button>
+            <button onClick={handleReset}>Reset <RxReset/></button>
             <Link to = "/" className="title">Sticky Study</Link>
             <div className="flex_Container">  
                 <Link to = "/cards" className="myFlashcard" >My Flashcards</Link>

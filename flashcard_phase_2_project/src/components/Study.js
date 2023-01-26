@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import {MdDoneOutline} from 'react-icons/md'
+import {MdFavorite} from 'react-icons/md'
+import {MdFavoriteBorder} from 'react-icons/md'
+
 
 function Study ({card, onDeleteCard, toggleFavorite}) {
 
@@ -42,14 +44,14 @@ function Study ({card, onDeleteCard, toggleFavorite}) {
     return (
         <div className='container'>
             <div onClick={toggleStudy} className='card' style={{background: isFront ? '#E7F150':'#1dace6'}}>
-                <h1 className='delete' onClick={handleDeleteStudyCard}><MdDoneOutline/></h1>
-                <button
+                <button className='delete' onClick={handleDeleteStudyCard}>✅</button>
+                <h1 className='favorite_btn'
                     type="text"
                     value={favorite}
                     onClick={(e) => {
                         e.stopPropagation()
                         handleToggleFavorite(id, e.target.value)}}
-                >{card.favorite?  "★" : "☆"}</button>
+                >{card.favorite?  <MdFavorite/> : <MdFavoriteBorder/>}</h1>
                 {isFront? (
                     <h2 className="front">{title}
                         <div className="question"> {question}</div>
