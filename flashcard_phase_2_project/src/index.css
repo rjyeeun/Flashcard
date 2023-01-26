@@ -32,6 +32,7 @@
 .title:hover{
     border-bottom-right-radius: 5px;
     background: linear-gradient(-30deg, transparent 1em, #E7F150 0);
+    text-shadow: 0 0 5px #fff, 0 0 10px rgb(253, 253, 253), 0 0 15px rgb(191, 191, 191), 0 0 20px #6c706b
 }
 
 .flex_Container {
@@ -64,7 +65,8 @@
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
-    background: linear-gradient(-30deg, transparent 1.5em, #ffd938 0)
+    background: linear-gradient(-30deg, transparent 1.5em, #ffd938 0);
+    text-shadow: 0 0 10px rgb(61, 41, 1);
 }
 
 .myFlashcard {
@@ -88,7 +90,8 @@
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
-    background: linear-gradient(-30deg, transparent 1.5em, #fbae3c 0)
+    background: linear-gradient(-30deg, transparent 1.5em, #fbae3c 0);
+    text-shadow: 0 0 10px rgb(232, 44, 11);
 }
 .study {
     font-family: 'Sticky Notes', sans-serif;
@@ -109,7 +112,8 @@
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
-    background: linear-gradient(-30deg, transparent 1.5em, #fd4db0 0)
+    background: linear-gradient(-30deg, transparent 1.5em, #fd4db0 0);
+    text-shadow: 0 0 5px rgb(116, 11, 57);
 }
 .favorites {
     font-family: 'Sticky Notes', sans-serif;
@@ -131,7 +135,8 @@
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
-    background: linear-gradient(-30deg, transparent 1.5em, #1dace6 0)
+    background: linear-gradient(-30deg, transparent 1.5em, #1dace6 0);
+    text-shadow: 0 0 10px rgb(24, 3, 92);
 }
 /* .container {
     padding: 0.5em;
@@ -272,7 +277,11 @@
 .form-style-6 input[type="submit"]:hover,
 .form-style-6 input[type="button"]:hover{
     border-bottom-right-radius: 5px;
-    background: linear-gradient(-30deg, transparent 1em, darkgrey 0)
+    background: linear-gradient(-30deg, transparent 1em, darkgrey 0);
+    cursor: pointer
+}
+.home_container {
+    position: relative;
 }
 .home_img {
     height: auto;
@@ -282,6 +291,47 @@
     margin-right: auto;
     margin-top: 30px;
     position: relative;
+}
+.first-txt {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: black;
+    text-align: center;
+    font-family: Chivo-Bold;
+    font-size: 28px;
+    text-shadow: 0 0 10px rgb(87, 251, 50);
+}
+.second-txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: black;
+    text-align: center;
+    font-family: Chivo-Bold;
+    font-size: 23px;
+    text-shadow: 0 0 10px rgb(251, 50, 217);
+}
+.third-txt {
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+    opacity:1;
+    transition: opacity 0.5s;
+}
+.third-txt:hover {
+    color: #fd4db0;
+    cursor: grab;
 }
 .delete {
     border-radius: 5px;
