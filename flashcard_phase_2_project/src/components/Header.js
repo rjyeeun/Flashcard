@@ -3,10 +3,17 @@ import { Link } from 'react-router-dom'
 
 
 
-function Header () {
+function Header ({setCardList}) {
+
+    const handleReset = () => {
+        fetch("http://localhost:8001/card")
+        .then(response => response.json())
+        .then(data => setCardList(data))
+    }
 
     return (
         <div>
+            <button onClick={handleReset}>Reset</button>
             <Link to = "/" className="title">Sticky Study</Link>
             <div className="flex_Container">  
                 <Link to = "/cards" className="myFlashcard" >My Flashcards</Link>

@@ -22,7 +22,7 @@
       "question": "What is the difference between == and ===?",
       "answer": "== compares values for equality without considering data types, while === compares both value and data type for equality.",
       "image": "https://miro.medium.com/max/1164/1*EEsRb-DDdA5UrqGndEqEeg.png",
-      "favorite": true
+      "favorite": false
     },
     {
       "id": 4,
@@ -31,14 +31,6 @@
       "answer": "'!' is know as the 'bang' or 'not' operator. It is used to negate or invert the value of a boolean expression.",
       "image": "https://miro.medium.com/max/260/1*d2twRcd3t6b0e3rwZokwyw.png",
       "favorite": false
-    },
-    {
-      "title": "test",
-      "question": "test",
-      "answer": "test",
-      "image": "",
-      "favorite": false,
-      "id": 5
     }
   ]
 }

@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import {MdDoneOutline} from 'react-icons/md'
 
-function FavoriteCard ({card, onDeleteCard, toggleFavorite}) {
+function FavoriteCard ({card, toggleFavorite}) {
 
     const [isFront, setIsFront]=useState(true)
 

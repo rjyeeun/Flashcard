@@ -16,6 +16,7 @@ function App() {
   const [favoriteCardList, setFavoriteCardList]=([])
 
   const url = 'http://localhost:8001/card'
+
   const favoriteCards = cardList.filter((favoriteCard) => favoriteCard.favorite === true)
 
   const changeSearch = (value) => {
@@ -34,7 +35,7 @@ function App() {
     const updatedCards = [...cardList, newCard];
     setCardList(updatedCards)
   }
-
+  
   //Display Cards via Search: Question or Title
   const filteredCards = cardList.filter(card => (
     card.question.toLowerCase().includes(searchTerm.toLowerCase()) || card.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -58,20 +59,17 @@ function App() {
          return card 
       }
     })
-    console.log(updatedCards)
     setCardList(updatedCards)
   }
 
-  
-  
-  
-  
   
 
   return (
     <div>
       
-      <Header />
+      <Header 
+        setCardList={setCardList}
+      />
 
       <Switch>
 
@@ -82,6 +80,7 @@ function App() {
         <Route path='/create_new_cards'>
           <FlashCardForm 
             addCards={addCards}
+            setCardList={setCardList}
           />
         </Route>
 
