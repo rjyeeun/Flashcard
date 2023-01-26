@@ -16,6 +16,7 @@ function App() {
   const [favoriteCardList, setFavoriteCardList]=([])
 
   const url = 'http://localhost:8001/card'
+
   const favoriteCards = cardList.filter((favoriteCard) => favoriteCard.favorite === true)
 
   const changeSearch = (value) => {
@@ -66,7 +67,9 @@ function App() {
   return (
     <div>
       
-      <Header />
+      <Header 
+        setCardList={setCardList}
+      />
 
       <Switch>
 

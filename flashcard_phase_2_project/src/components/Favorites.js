@@ -11,7 +11,6 @@ export default function Favorites({ searchTerm, changeSearch, favoriteCards, tog
     />
   ))
 
-  console.log(favoriteCards)
   return (
     <div>
         <Search  
