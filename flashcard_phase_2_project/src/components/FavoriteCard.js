@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import {MdFavorite} from 'react-icons/md'
 import {MdFavoriteBorder} from 'react-icons/md'
+import {TiThumbsOk} from 'react-icons/ti'
 
-function FavoriteCard ({card, toggleFavorite}) {
+
+function FavoriteCard ({card, toggleFavorite, onDeleteCard}) {
 
     const [isFront, setIsFront]=useState(true)
 
@@ -12,6 +14,11 @@ function FavoriteCard ({card, toggleFavorite}) {
     //Used to Toggle Question and Answer & Card CSS
     const toggleStudy = () => {    
         setIsFront(isFront => !isFront)
+    }
+
+    //Delete Card From DOM Only
+    const handleDeleteStudyCard = () => {
+        onDeleteCard(id)
     }
 
     ////Used to toggle favorite (true or false)
@@ -36,27 +43,35 @@ function FavoriteCard ({card, toggleFavorite}) {
     }
         
     return (
-        <div className='container'>
+        <div>
             <div onClick={toggleStudy} className='card' style={{background: isFront ? '#E7F150':'#1dace6'}}>
-                <h1 className='favorite_btn'
-                    type="text"
-                    value={favorite}
-                    onClick={(e) => {
-                        e.stopPropagation()
-                        handleToggleFavorite(id, e.target.value)}}
-                >{card.favorite?  <MdFavorite/> : <MdFavoriteBorder/>}</h1>
+                <div className="btn_container">
+                    <figure className='favorite_btn'
+                        type="text"
+                        value={favorite}
+                        onClick={(e) => {
+                            e.stopPropagation()
+                            handleToggleFavorite(id, e.target.value)}}
+                    >{card.favorite?  <MdFavorite/> : <MdFavoriteBorder/>}
+                    </figure>
+                </div>
                 {isFront? (
-                    <h2 className="front">{title}
-                        <div className="question"> {question}</div>
-                    </h2>
+                    <>
+                        <h2 className="front">{title}</h2>
+                        <p className="question"> {question}</p>
+                    </>
                     ) : (
-                    <h2 className="back">{answer}
+                    <h2 className="answer">{answer}
                         <div><img className="image" src={image}/></div>
                     </h2>
                     )}
+                <div className="btn_container">
+                    <figure className='study_delete' onClick={handleDeleteStudyCard}><TiThumbsOk/></figure>
+                </div>        
             </div>
         </div>
     );
   }
+
 
 export default FavoriteCard
