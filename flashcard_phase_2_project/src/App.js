@@ -104,6 +104,7 @@ function App() {
             searchTerm={searchTerm}
             changeSearch={changeSearch}
             toggleFavorite={toggleFavorite}
+            onDeleteCard={onDeleteCard}
           />
         </Route>
 

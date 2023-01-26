@@ -18,7 +18,7 @@ function FlashCard({ card, onDeleteCard, toggleFavorite, handleEditClick }) {
         .catch(error => alert(error))
     }
 
-    //used to toggle favorite (true or false)
+    //Used to Toggle Favorite (true or false) & PATCH to DB
     const handleToggleFavorite = (id) => {
         fetch(`http://localhost:8001/card/${id}`, {
             method: "PATCH",

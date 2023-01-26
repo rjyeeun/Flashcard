@@ -31,7 +31,7 @@ function FlashCardForm({addCards, setCardList}) {
       addCards(formData)
       setFormData(initialFormData)
 
-      //fetch the updated card list from server and update the state of cardList
+      //Fetch the Updated Card List From Server and Update the State of cardList
       fetch("http://localhost:8001/card")
       .then(response => response.json())
       .then(data => setCardList(data))
