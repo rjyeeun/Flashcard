@@ -2,6 +2,7 @@ import {MdDeleteForever} from 'react-icons/md'
 import {MdFavorite} from 'react-icons/md'
 import {MdFavoriteBorder} from 'react-icons/md'
 import {FaPencilAlt} from 'react-icons/fa'
+import {Link} from 'react-router-dom'
 
 
 function FlashCard({card, onDeleteCard, toggleFavorite}) {
@@ -37,7 +38,6 @@ function FlashCard({card, onDeleteCard, toggleFavorite}) {
         })
         .catch(error => (console.error(error)))
     }
-    
 
     return (
         <>
@@ -55,7 +55,8 @@ function FlashCard({card, onDeleteCard, toggleFavorite}) {
                 <h2 className="front" style={{fontSize: 50}}>{title}</h2>
                 <p className="question"style={{fontSize: 30}}> Q: {question}</p>
                 <div className="btn_container">
-                    <h1 className='edit_btn'><FaPencilAlt/></h1>
+                    <Link to = {`/cards/${id}/edit`} className='edit_btn'><FaPencilAlt/></Link>
+                    {/* <h1 className='edit_btn'><FaPencilAlt/></h1> */}
                     <h1 className='delete_btn' onClick={handleDeleteClick}><MdDeleteForever /></h1> 
                 </div>        
             </div>

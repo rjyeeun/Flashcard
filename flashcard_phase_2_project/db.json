@@ -6,7 +6,7 @@
       "question": "What is JSX?",
       "answer": "JavaScript XML => allows us to combine JS and HTML.",
       "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/JSX.PNG",
-      "favorite": false
+      "favorite": true
     },
     {
       "id": 2,
@@ -31,6 +31,14 @@
       "answer": "'!' is know as the 'bang' or 'not' operator. It is used to negate or invert the value of a boolean expression.",
       "image": "https://miro.medium.com/max/260/1*d2twRcd3t6b0e3rwZokwyw.png",
       "favorite": false
+    },
+    {
+      "title": "test",
+      "question": "teswt",
+      "answer": "test",
+      "image": "test",
+      "favorite": false,
+      "id": 5
     }
   ]
 }
