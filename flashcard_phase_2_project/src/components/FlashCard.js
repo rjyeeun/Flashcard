@@ -44,8 +44,8 @@ function FlashCard({card, onDeleteCard, toggleFavorite}) {
             <div className="card">
                 <h2 style={{fontSize: 50}}>{title}</h2>
                 <h2 style={{fontSize: 30}}> Q: {question}</h2> 
-                <h1 onClick={handleDeleteClick}><MdDeleteForever /></h1>
-                <h1><FaPencilAlt/></h1>
+                <h1 className='delete_btn' onClick={handleDeleteClick}><MdDeleteForever /></h1>
+                <h1 className='edit_btn'><FaPencilAlt/></h1>
                 <h1 className='favorite_btn'                 
                     type="text"
                     value={favorite}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom' 
+import { Link, NavLink } from 'react-router-dom' 
 import {RxReset} from 'react-icons/rx'
 
 
@@ -17,10 +17,10 @@ function Header ({setCardList}) {
             <button onClick={handleReset}>Reset <RxReset/></button>
             <Link to = "/" className="title">Sticky Study</Link>
             <div className="flex_Container">  
-                <Link to = "/cards" className="myFlashcard" >My Flashcards</Link>
-                <Link to = "/cards/study" className="study" >Study</Link>
-                <Link to = "/cards/favorites" className="favorites">Favorites</Link>
-                <Link to = "/create_new_cards" className="createNew">Create Flashcards</Link>
+                <NavLink to = "/cards" className="myFlashcard" >My Flashcards</NavLink>
+                <NavLink to = "/cards/study" className="study" >Study</NavLink>
+                <NavLink to = "/cards/favorites" className="favorites">Favorites</NavLink>
+                <NavLink to = "/create_new_cards" className="createNew">Create Flashcards</NavLink>
             </div>
         </div>
     )

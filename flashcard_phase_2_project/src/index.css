@@ -29,7 +29,7 @@
     margin-bottom: 50px;
     border-bottom-right-radius: 60px 5px;
 }
-.title:hover{
+.title:hover, .title:focus{
     border-bottom-right-radius: 5px;
     background: linear-gradient(-30deg, transparent 1em, #E7F150 0);
     text-shadow: 0 0 5px #fff, 0 0 10px rgb(253, 253, 253), 0 0 15px rgb(191, 191, 191), 0 0 20px #6c706b
@@ -61,14 +61,13 @@
     transition: transform .15s linear; 
 }
 
-.createNew:hover {
+.createNew:hover, .createNew:focus {
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
     background: linear-gradient(-30deg, transparent 1.5em, #ffd938 0);
-    text-shadow: 0 0 10px rgb(61, 41, 1);
+    text-shadow: 0 0 10px rgb(255, 255, 255);
 }
-
 .myFlashcard {
     font-family: 'Sticky Notes', sans-serif;
     font-size: xx-large;
@@ -86,12 +85,12 @@
     transition: transform .15s linear;
 }
 
-.myFlashcard:hover {
+.myFlashcard:hover, .myFlashcard:focus {
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
     background: linear-gradient(-30deg, transparent 1.5em, #fbae3c 0);
-    text-shadow: 0 0 10px rgb(232, 44, 11);
+    text-shadow: 0 0 10px rgb(245, 244, 244);
 }
 .study {
     font-family: 'Sticky Notes', sans-serif;
@@ -108,12 +107,12 @@
     transform: rotate(-6deg);
     transition: transform .15s linear; 
 }
-.study:hover {
+.study:hover, .study:focus {
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
     background: linear-gradient(-30deg, transparent 1.5em, #fd4db0 0);
-    text-shadow: 0 0 5px rgb(116, 11, 57);
+    text-shadow: 0 0 5px white;
 }
 .favorites {
     font-family: 'Sticky Notes', sans-serif;
@@ -131,12 +130,12 @@
     transition: transform .15s linear;
   
 }
-.favorites:hover {
+.favorites:hover, .favorites:focus {
     border-bottom-right-radius: 5px;
     width: 7em;
     height: 1em;
     background: linear-gradient(-30deg, transparent 1.5em, #1dace6 0);
-    text-shadow: 0 0 10px rgb(24, 3, 92);
+    text-shadow: 0 0 10px white;
 }
 /* .container {
     padding: 0.5em;
@@ -336,4 +335,20 @@
 .delete {
     border-radius: 5px;
     background: white
+}
+.favorite_btn:hover {
+    color: #fd4db0;
+    cursor: grab;
+}
+.delete_btn:hover {
+    color: red;
+    cursor: grab
+}
+.edit_btn:hover {
+    color: #53c8f6;
+    cursor: grab;
+}
+.study_delete:hover {
+    color: #007e1f;
+    cursor: grab;
 }

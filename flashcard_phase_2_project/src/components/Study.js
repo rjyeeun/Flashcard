@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {MdFavorite} from 'react-icons/md'
 import {MdFavoriteBorder} from 'react-icons/md'
+import {TiThumbsOk} from 'react-icons/ti'
 
 
 function Study ({card, onDeleteCard, toggleFavorite}) {
@@ -44,7 +45,7 @@ function Study ({card, onDeleteCard, toggleFavorite}) {
     return (
         <div className='container'>
             <div onClick={toggleStudy} className='card' style={{background: isFront ? '#E7F150':'#1dace6'}}>
-                <button className='delete' onClick={handleDeleteStudyCard}>✅</button>
+                <h1 className='study_delete' onClick={handleDeleteStudyCard}><TiThumbsOk/></h1>
                 <h1 className='favorite_btn'
                     type="text"
                     value={favorite}
