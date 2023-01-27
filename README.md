@@ -9,7 +9,7 @@ Technologies Used
 
 Challenges 
 - We were not able to manage a complex data(db.json) so that a user can create and organize cards into decks. 
-- We have limited option to study flashcards. 
+- We have a limited option to study flashcards. 
 - We have 12 components as of right now which we may reduce it and make cleaner and more organized code. 
 
 
