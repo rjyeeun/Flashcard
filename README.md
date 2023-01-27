@@ -4,7 +4,7 @@ Project Description
 - It is a flashcard website where a user can create, customize, and study flashcards. 
 
 Technologies Used
-- React, JavaScript, CSS, HTML
+- React, React icons, JavaScript, CSS, HTML
 
 
 Challenges 
