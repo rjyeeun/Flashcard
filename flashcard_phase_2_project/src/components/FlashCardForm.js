@@ -31,7 +31,7 @@ function FlashCardForm({addCards, setCardList}) {
       addCards(formData)
       setFormData(initialFormData)
 
-      //fetch the updated card list from server and update the state of cardList
+      //Fetch the Updated Card List From Server and Update the State of cardList
       fetch("http://localhost:8001/card")
       .then(response => response.json())
       .then(data => setCardList(data))
@@ -43,28 +43,38 @@ function FlashCardForm({addCards, setCardList}) {
     <div className="form-style-6">
     <h1>Create a Flashcard</h1> 
       <form onSubmit={handleSubmit}>
-        <input 
+        <textarea
+          rows={2}
+          cols={42}
           type='text' 
           name="title" 
           placeholder="Title" 
           value={formData.title} 
           onChange={handleChange}
         />
-        <input 
+        <textarea 
+          rows={4}
+          cols={45}
+          className= "form_inputBox"
           type='text' 
           name="question" 
           placeholder="Question" 
           value={formData.question}
           onChange={handleChange}
+          size="100"
         />
-        <input 
+        <textarea 
+          rows={10}
+          cols={45}
           type='text' 
           name="answer" 
           placeholder="Answer" 
           value={formData.answer}
           onChange={handleChange}
         />
-        <input 
+        <textarea
+          rows={4}
+          cols={45}
           type='text' 
           name="image" 
           placeholder="Image url" 
