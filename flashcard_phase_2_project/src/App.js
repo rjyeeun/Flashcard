@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Switch, Route, useParams} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 
 import Home from './components/Home'
 import FlashCardList from './components/FlashCardList';
@@ -64,10 +64,13 @@ function App() {
     setCardList(updatedCards)
   }
 
+  
   //Grabs Card Data From FlashCard Component => Sends it to EditCardForm
   const handleEditClick = (card) => {
     setEditCard(card)
   }
+
+
 
   return (
     <div>
@@ -101,8 +104,6 @@ function App() {
         <Route path='/cards/favorites'>
           <Favorites 
             favoriteCards={favoriteCards}
-            searchTerm={searchTerm}
-            changeSearch={changeSearch}
             toggleFavorite={toggleFavorite}
             onDeleteCard={onDeleteCard}
           />

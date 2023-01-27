@@ -55,7 +55,7 @@ function FlashCard({ card, onDeleteCard, toggleFavorite, handleEditClick }) {
                     </figure>
                 </div>
                 <h2 className="front" style={{fontSize: 50}}>{title}</h2>
-                <p className="question"style={{fontSize: 30}}> Q: {question}</p>
+                <p className="question"style={{fontSize: 30}}>{question}</p>
                 <div className="btn_container">
                     <Link to = {`/cards/${id}/edit`} onClick={onEditClick}
                     className='edit_btn'><FaPencilAlt/></Link>               
@@ -63,7 +63,7 @@ function FlashCard({ card, onDeleteCard, toggleFavorite, handleEditClick }) {
                 </div>        
             </div>
             <div className='answerCard' style={{background: '#1dace6'}}>
-                <p className="answer">{answer}<img className="image" src={image}/></p> 
+                <p className="answer">{answer}<img className="image" src={image} alt=''/></p> 
             </div>
         </>
     );

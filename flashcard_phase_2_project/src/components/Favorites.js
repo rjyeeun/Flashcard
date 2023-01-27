@@ -1,8 +1,7 @@
 import React from 'react'
 import FavoriteCard from './FavoriteCard'
-import Search from './Search'
 
-export default function Favorites({ searchTerm, changeSearch, favoriteCards, toggleFavorite, onDeleteCard }) {
+export default function Favorites({ favoriteCards, toggleFavorite, onDeleteCard }) {
   const card = favoriteCards.map(card => (
     <FavoriteCard
     key={card.id} 
@@ -14,10 +13,6 @@ export default function Favorites({ searchTerm, changeSearch, favoriteCards, tog
 
   return (
     <div>
-        <Search  
-            searchTerm = {searchTerm} 
-            changeSearch={changeSearch} 
-        />
         {card}
     </div>
   )
