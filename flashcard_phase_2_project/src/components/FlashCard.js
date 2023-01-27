@@ -5,7 +5,7 @@ import {FaPencilAlt} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
 
 
-function FlashCard({ card, onDeleteCard, toggleFavorite, handleEditClick }) {
+function FlashCard({card, onDeleteCard, toggleFavorite, setEditCard, handleEditClick, editCard}) {
     
     const {id, title, question, answer, image, favorite} = card
 
@@ -15,11 +15,13 @@ function FlashCard({ card, onDeleteCard, toggleFavorite, handleEditClick }) {
             method: "DELETE",
         })
         .then(()=>onDeleteCard(id))
-        .catch(error => alert(error))
+        .catch(err => alert('Failed to Delete Card'))
     }
 
-    //Used to Toggle Favorite (true or false) & PATCH to DB
-    const handleToggleFavorite = (id) => {
+    //used to toggle favorite (true or false)
+    const handleToggleFavorite = (id, favorite) => {
+       
+
         fetch(`http://localhost:8001/card/${id}`, {
             method: "PATCH",
             headers: {
@@ -38,7 +40,9 @@ function FlashCard({ card, onDeleteCard, toggleFavorite, handleEditClick }) {
     }
 
     const onEditClick = () => {
+        setEditCard(card)
         handleEditClick(card)
+       
     }
 
     return (
@@ -55,17 +59,19 @@ function FlashCard({ card, onDeleteCard, toggleFavorite, handleEditClick }) {
                     </figure>
                 </div>
                 <h2 className="front" style={{fontSize: 50}}>{title}</h2>
-                <p className="question"style={{fontSize: 30}}>{question}</p>
+                <p className="question"style={{fontSize: 30}}> Q: {question}</p>
                 <div className="btn_container">
                     <Link to = {`/cards/${id}/edit`} onClick={onEditClick}
-                    className='edit_btn'><FaPencilAlt/></Link>               
+                    className='edit_btn'><FaPencilAlt/></Link>
+                    {/* <h1 className='edit_btn'><FaPencilAlt/></h1> */}
                     <h1 className='delete_btn' onClick={handleDeleteClick}><MdDeleteForever /></h1> 
                 </div>        
             </div>
             <div className='answerCard' style={{background: '#1dace6'}}>
-                <p className="answer">{answer}<img className="image" src={image} alt=''/></p> 
+                <p className="answer">{answer}<img className="image" src={image}/></p> 
             </div>
         </>
+
     );
   }
 
