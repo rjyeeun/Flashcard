@@ -13,16 +13,6 @@
 
 }
 
-@font-face {
-    font-family: 'Bookerly_Bold';
-    src: url(./fonts/Bookerly_Bold.ttf);
-}
-
-@font-face {
-    font-family: 'Bookerly_Light';
-    src: url(./fonts/Bookerly_Light.ttf);
-}
-
 
 
 .title {
@@ -233,15 +223,18 @@
     outline: none;
 
 }
+.inputBox:hover {
+    border-bottom-right-radius: 5px;
+    background: linear-gradient(-40deg, transparent 1em, darkgrey 0)
+}
 
 .form-style-6{
 	font: 95% Chivo-Bold, Helvetica, sans-serif;
-    font-size: 20px;
 	max-width: 400px;
 	margin: 10px auto;
 	padding: 16px;
 	background: #F7F7F7;
-    margin-top: 75px; 
+    margin-top: 100px;
 }
 .form-style-6 h1{
 	background: grey;
@@ -252,7 +245,16 @@
 	color: #fff;
 	margin: -16px -16px 16px -16px;
 }
-.form-style-6 textarea
+.form-style-6 input[type="text"],
+.form-style-6 input[type="date"],
+.form-style-6 input[type="datetime"],
+.form-style-6 input[type="email"],
+.form-style-6 input[type="number"],
+.form-style-6 input[type="search"],
+.form-style-6 input[type="time"],
+.form-style-6 input[type="url"],
+.form-style-6 textarea,
+.form-style-6 select 
 {
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
@@ -263,33 +265,39 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	width: 100%;
-	background: rgb(255, 255, 255);
+	background: #fff;
 	margin-bottom: 4%;
 	border: 1px solid #ccc;
 	padding: 3%;
 	color: #555;
-	font-family: Bookerly_Light;
-    font-size: 23px
+	font: 95% Arial, Helvetica, sans-serif;
 }
-.form-style-6 textarea:focus
+.form-style-6 input[type="text"]:focus,
+.form-style-6 input[type="date"]:focus,
+.form-style-6 input[type="datetime"]:focus,
+.form-style-6 input[type="email"]:focus,
+.form-style-6 input[type="number"]:focus,
+.form-style-6 input[type="search"]:focus,
+.form-style-6 input[type="time"]:focus,
+.form-style-6 input[type="url"]:focus,
+.form-style-6 textarea:focus,
+.form-style-6 select:focus
 {
 	box-shadow: 0 0 5px #E7F150;
 	padding: 3%;
 	border: 1px solid #E7F150;
 }
-.inputBox:hover,:focus {
-    box-shadow: 5px 5px 7px white;
-}
+
 .form-style-6 input[type="submit"],
 .form-style-6 input[type="button"]{
-    font-family: Chivo-Bold;
-    font-size: 25px;
+    font: Chivo-Bold, Monaco, Consolas, "Courier New", monospace;
+    font-size: large;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	width: 100%;
 	padding: 3%;
-	background: black;
+	background: grey;
 	border-top-style: none;
 	border-right-style: none;
 	border-left-style: none;	
@@ -297,7 +305,8 @@
 }
 .form-style-6 input[type="submit"]:hover,
 .form-style-6 input[type="button"]:hover{
-    background: lightpink;
+    border-bottom-right-radius: 5px;
+    background: linear-gradient(-30deg, transparent 1em, darkgrey 0);
     cursor: pointer
 }
 .home_container {
@@ -305,7 +314,7 @@
 }
 .home_img {
     height: auto;
-    max-width: 40%;
+    max-width: 38%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -374,7 +383,7 @@
 .delete_btn {
     padding: 10px;
     display: flex;
-    align-items: flex-end;
+    align-items: end;
     justify-content: right;
 }
 .edit_btn:hover {
@@ -383,11 +392,8 @@
 }
 .edit_btn {
     padding: 10px;
-    font-size: 24px;
     display: flex;
-    align-items: flex-end;
-    justify-content: right;
-    margin-bottom: 24px;
+    align-items: end;
 }
 .study_delete:hover {
     color: #007e1f;
@@ -396,32 +402,25 @@
 .study_delete {
     font-size: 35px;
     display: flex;
-    align-items: flex-end;
+    align-items: end;
     justify-content: right;
 }
 .front {
-    font-family: 'Bookerly_Bold';
-    font-size: 50px;
+    font-size: 60px;
+    padding: 10px;
+    margin-top: 10px;
     text-align: center;
-    margin-top: -70px
 }
 .question {
-    font-family: 'Bookerly_Light';
-    text-align: center;
-    font-size: 40px;
-    text-align-last: center;
-}
-.answer {
-    font-family: 'Bookerly_Light';
     text-align: center;
     font-size: 35px;
-    line-height: 1.5
+}
+.answer {
+    text-align: center;
+    font-size: 35px;
 }
 .btn_container {
     display: flex;
     flex-direction: row;
     justify-content: right;
-}
-.form_inputBox {
-    height: 60px
 }

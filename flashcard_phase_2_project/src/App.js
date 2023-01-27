@@ -64,16 +64,13 @@ function App() {
     setCardList(updatedCards)
   }
 
-  
-  //Grabs Card Data From FlashCard Component => Sends it to EditCardForm
   const handleEditClick = (card) => {
-    setEditCard(card)
+    const thing = card
   }
-
-
 
   return (
     <div>
+      
       <Header 
         setCardList={setCardList}
       />
@@ -93,40 +90,40 @@ function App() {
 
         <Route path='/cards/study'>
           <StudyCardList
-            toggleFavorite={toggleFavorite} 
-            cardList={filteredCards}
-            searchTerm={searchTerm}
-            changeSearch={changeSearch}
-            onDeleteCard={onDeleteCard}
+              toggleFavorite={toggleFavorite} 
+              cardList={filteredCards}
+              searchTerm={searchTerm}
+              changeSearch={changeSearch}
+              onDeleteCard={onDeleteCard}
           />
         </Route>
-
         <Route path='/cards/favorites'>
           <Favorites 
             favoriteCards={favoriteCards}
+            searchTerm={searchTerm}
+            changeSearch={changeSearch}
             toggleFavorite={toggleFavorite}
-            onDeleteCard={onDeleteCard}
           />
         </Route>
-
-        <Route path='/cards/:id/edit'>
+        <Route path= "/cards/:id/edit">
           <EditCardForm
             setCardList={setCardList}
+            setEditCard={setEditCard}
             editCard={editCard}
-          />
+            thing={thing}
+            />
         </Route>
-
         <Route path='/cards'>
-          <FlashCardList             
+          <FlashCardList 
+            editCard={editCard}
             cardList={filteredCards}
             searchTerm={searchTerm}
             changeSearch={changeSearch}
             onDeleteCard={onDeleteCard}
+            setEditCard={setEditCard}
             toggleFavorite={toggleFavorite}
-            handleEditClick={handleEditClick}
-          />
+            handleEditClick={handleEditClick}  />
         </Route>
-
       </Switch>
     </div>
   );

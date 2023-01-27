@@ -21,9 +21,10 @@ function Study ({card, onDeleteCard, toggleFavorite}) {
         onDeleteCard(id)
     }
 
-    //Used to Toggle Favorite (true or false) & PATCH to DB
-    const handleToggleFavorite = (id) => {
+    ////Used to toggle favorite (true or false)
+    const handleToggleFavorite = (id, favorite) => {
   
+
         fetch(`http://localhost:8001/card/${id}`, {
             method: "PATCH",
             headers: {
@@ -57,11 +58,11 @@ function Study ({card, onDeleteCard, toggleFavorite}) {
                 {isFront? (
                     <>
                         <h2 className="front">{title}</h2>
-                        <p className="question">{question}</p>
+                        <p className="question"> {question}</p>
                     </>
                     ) : (
                     <h2 className="answer">{answer}
-                        <div><img className="image" src={image} alt=''/></div>
+                        <div><img className="image" src={image}/></div>
                     </h2>
                     )}
                 <div className="btn_container">
