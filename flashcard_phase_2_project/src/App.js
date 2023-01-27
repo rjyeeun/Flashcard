@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, useParams} from 'react-router-dom'
 
 import Home from './components/Home'
 import FlashCardList from './components/FlashCardList';
@@ -64,13 +64,13 @@ function App() {
     setCardList(updatedCards)
   }
 
+  //Grabs Card Data From FlashCard Component => Sends it to EditCardForm
   const handleEditClick = (card) => {
-    const thing = card
+    setEditCard(card)
   }
 
   return (
     <div>
-      
       <Header 
         setCardList={setCardList}
       />
@@ -90,40 +90,42 @@ function App() {
 
         <Route path='/cards/study'>
           <StudyCardList
-              toggleFavorite={toggleFavorite} 
-              cardList={filteredCards}
-              searchTerm={searchTerm}
-              changeSearch={changeSearch}
-              onDeleteCard={onDeleteCard}
+            toggleFavorite={toggleFavorite} 
+            cardList={filteredCards}
+            searchTerm={searchTerm}
+            changeSearch={changeSearch}
+            onDeleteCard={onDeleteCard}
           />
         </Route>
+
         <Route path='/cards/favorites'>
           <Favorites 
             favoriteCards={favoriteCards}
             searchTerm={searchTerm}
             changeSearch={changeSearch}
             toggleFavorite={toggleFavorite}
+            onDeleteCard={onDeleteCard}
           />
         </Route>
-        <Route path= "/cards/:id/edit">
+
+        <Route path='/cards/:id/edit'>
           <EditCardForm
             setCardList={setCardList}
-            setEditCard={setEditCard}
             editCard={editCard}
-            thing={thing}
-            />
+          />
         </Route>
+
         <Route path='/cards'>
-          <FlashCardList 
-            editCard={editCard}
+          <FlashCardList             
             cardList={filteredCards}
             searchTerm={searchTerm}
             changeSearch={changeSearch}
             onDeleteCard={onDeleteCard}
-            setEditCard={setEditCard}
             toggleFavorite={toggleFavorite}
-            handleEditClick={handleEditClick}  />
+            handleEditClick={handleEditClick}
+          />
         </Route>
+
       </Switch>
     </div>
   );

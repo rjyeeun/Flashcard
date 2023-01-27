@@ -21,10 +21,9 @@ function Study ({card, onDeleteCard, toggleFavorite}) {
         onDeleteCard(id)
     }
 
-    ////Used to toggle favorite (true or false)
-    const handleToggleFavorite = (id, favorite) => {
+    //Used to Toggle Favorite (true or false) & PATCH to DB
+    const handleToggleFavorite = (id) => {
   
-
         fetch(`http://localhost:8001/card/${id}`, {
             method: "PATCH",
             headers: {
